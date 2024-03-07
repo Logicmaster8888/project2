@@ -9,6 +9,11 @@ const app = express();
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+// SET the Views Directory
+app.set("view engine", "ejs");
+
+// SET EJS as the view engine
+app.set("views", "./views");
 
 // Passport middleware
 app.use(passport.initialize());
@@ -28,13 +33,16 @@ app.get('/', (req, res) => {
   res.send(message);
 })
 
-app.get('/cats', (req, res) => {
+app.get('/hello', (req, res) => {
   console.log(`Jerry is torturing Tom`);
   res.send(`Jerry is Communicative`);
 })
 
+app.get("/home", (req, res) => {
+  res.render("index", { title: "Homepage", message:"Welcome to my website!"});
+});
 
-app.get('/pokemon', (req, res) => {
+app.get('/', (req, res) => {
   res.send(starterPokemon);
 })
 
