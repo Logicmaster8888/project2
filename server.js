@@ -51,7 +51,7 @@ app.get("/blogPost", (req, res) => {
 });
 
 app.get("/profile", (req, res) => {
-  res.render("blogPost", { title: "Blog Post Page", message:"Post what you are thinking!"});
+  res.render("profile", { title: "Your Profile", message:"Edit Your Profile"});
 });
 
 app.get("/redirect", (req, res) => {
