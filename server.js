@@ -33,18 +33,30 @@ app.get('/', (req, res) => {
   res.send(message);
 })
 
-app.get('/hello', (req, res) => {
-  console.log(`Jerry is torturing Tom`);
-  res.send(`Jerry is Communicative`);
+app.get('/edit', (req, res) => {
+  console.log(`This is your edit profile page`);
+  res.render("edit", { title: "Edit Your Profile", message:"Edit your Profile"});
 })
 
 app.get("/home", (req, res) => {
-  res.render("index", { title: "Homepage", message:"Welcome to my website!"});
+  res.render("index", { title: "Homepage", message:"Welcome to Social Sync!"});
 });
 
-app.get('/', (req, res) => {
-  res.send(starterPokemon);
-})
+app.get("/Login", (req, res) => {
+  res.render("Login", { title: "Login", message:"Please Login"});
+});
+
+app.get("/blogPost", (req, res) => {
+  res.render("blogPost", { title: "Blog Post Page", message:"Post what you are thinking!"});
+});
+
+app.get("/profile", (req, res) => {
+  res.render("blogPost", { title: "Blog Post Page", message:"Post what you are thinking!"});
+});
+
+app.get("/redirect", (req, res) => {
+  res.render("redirect", { title: "You're Being Redirected", message:"404 Error - You're Being Redirected"});
+});
 
 app.get('/jammy', (req, res) => {
   // res.send will send back 1 thing to the front end
