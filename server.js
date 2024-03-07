@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const usersRoutes = require('./routes/api/users');
+const path = require('path');
 
 const app = express();
 
@@ -11,11 +12,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // SET the Views Directory
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // SET EJS as the view engine
 app.set("views", "./views");
 
-// Passport middleware
+// Passport middleware 
 app.use(passport.initialize());
 
 // Load Passport configuration
