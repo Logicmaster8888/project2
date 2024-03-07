@@ -8,8 +8,7 @@
 </head>
 <body>
 
-    <% include ./views/header.ejs %>
-    <!-- Profile Box -->
+    <%- include('partials/header') %>     <!-- Profile Box -->
     <div class="profile-box">
         <img src="profile-picture.jpg" alt="Profile Picture">
         <h2>John Doe</h2>
@@ -31,7 +30,7 @@
             <button type="submit">Save Changes</button>
         </form>
     </div>
-    <% include ./views/footer.ejs %>
+    <%- include('partials/footer') %>
 
 
 </body>
