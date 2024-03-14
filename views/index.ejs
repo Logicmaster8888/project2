@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome CSS -->
@@ -12,9 +11,43 @@
     <link rel="stylesheet" type="text/css" href="/index.css">
 </head>
 <body>
-    <% include('partials/header') %> 
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand"><i class="fas fa-code me-2"></i>Social Sync</a>
+            <button class="navbar-toggler" data-bs-target="#my-nav" data-bs-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>    
+            </button>
+            <div id="my-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/"><i class="fas fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/add"><i class="fas fa-user-plus me-1"></i>Add Users</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fas fa-globe me-1"></i>About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fas fa-envelope me-1"></i>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>    
+    </nav>
 
+    <div class="container">
+        <!-- App Name -->
+        <h1 class="display-4">Social Sync</h1>
+        <!-- Features Description -->
+        <p class="lead">Social Sync is a platform where you can connect with your friends and share updates, photos, and videos. Stay in touch with what's happening in your social circle and explore new connections.</p>
+        <!-- Visuals -->
+        <!-- You can add visuals here, like images or videos -->
+    </div>
+
+    <!-- Add your section here -->
+    <section>
         <!-- Edit Account Info Section -->
         <div class="edit-account">
             <h2>Edit Account Information</h2>
@@ -28,9 +61,12 @@
                 <button type="submit">Save Changes</button>
             </form>
         </div>
-    </div>
+    </section>
 
-    <% include('partials/footer') %>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Social Sync Website.</p>
+    </footer>
 
     <!-- Bootstrap Bundle JS (including Popper.js) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

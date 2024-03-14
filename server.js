@@ -20,6 +20,12 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve Bootstrap CSS file
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+
+// Serve Font Awesome CSS file
+app.use('/fontawesome', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/css')));
+
 // Initialize express-session middleware
 // app.use(session({
 //   secret: 'secret', // Change this to a long random string in production
@@ -63,27 +69,39 @@ app.get('/edit', (req, res) => {
 
 
 // Define a route to handle the form submission and create a new blog post
-app.post('/create-post', (req, res) => {
-    // Code to handle form submission and create a new blog post
-    const { title, content } = req.body;
-    // Code to save the blog post to the database or perform other actions
-    // Here we'll just log the submitted data
-    console.log('Submitted Blog Post:', { title, content });
-    res.redirect('/create-post');
-});
-
-// Define a route to handle the POST request for creating a blog post
-app.post('/create-post', (req, res) => {
-  res.status(404).send("Cannot POST /create-post");
-});
-
-// Define route to render the blogpost.ejs file
-app.get('/blogPost', (req, res) => {
+// Define route to render the create-post.ejs file
+app.get('/create-post', (req, res) => {
   try {
-    // Render the blogpost page with user as null
-    res.render('blogPost', { user: null }); // Assuming your blogPost.ejs file is located in the views directory
+    // Render the create-post page with user as null
+    res.render('create-post', { user: null }); // Assuming your create-post.ejs file is located in the views directory
   } catch (error) {
-    console.error('Error rendering blogpost page:', error);
+    console.error('Error rendering create-post page:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+// Define a route to handle the form submission and create a new blog post
+app.get('/create-post', (req, res) => {
+  try {
+    // Assuming you have an array of blog posts named blogPosts
+    const blogPosts = [
+      {
+        title: 'Sample Blog Post 1',
+        content: 'This is the content of the first blog post.',
+        image: 'path/to/image1.jpg'
+      },
+      {
+        title: 'Sample Blog Post 2',
+        content: 'This is the content of the second blog post.',
+        image: 'path/to/image2.jpg'
+      },
+      // Add more blog posts as needed
+    ];
+
+    // Render the create-post page with blogPosts array
+    res.render('create-post', { blogPosts });
+  } catch (error) {
+    console.error('Error rendering create-post page:', error);
     res.status(500).send('Internal Server Error');
   }
 });
