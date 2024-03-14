@@ -9,6 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Your custom CSS -->
     <link rel="stylesheet" type="text/css" href="/index.css">
+    <style>
+        /* Custom CSS for frames */
+        .frame-left {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .frame-right {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -36,42 +52,261 @@
                         <a class="nav-link" href="/about-us"><i class="fas fa-info-circle me-1"></i>About Us</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/login"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+                        <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                     </li>
+
                 </ul>
             </div>
         </div>    
     </nav>
 
     <div class="container">
-        <!-- App Name -->
-        <h1 class="display-4">Social Sync</h1>
-        <!-- Features Description -->
-        <p class="lead">Social Sync is a platform where you can connect with your friends and share updates, photos, and videos. Stay in touch with what's happening in your social circle and explore new connections.</p>
-        <!-- Visuals -->
-        <!-- You can add visuals here, like images or videos -->
+        <!-- Official Frame -->
+        <div class="card border-primary mb-3">
+            <div class="card-body">
+                <!-- App Name -->
+                <h1 class="card-title display-4">Social Sync</h1>
+                <!-- Features Description -->
+                <p class="card-text lead">Social Sync is a platform where you can connect with your friends and share updates, photos, and videos. Stay in touch with what's happening in your social circle and explore new connections.</p>
+                <!-- Visuals -->
+                <!-- You can add visuals here, like images or videos -->
+            </div>
+        </div>
     </div>
 
-    <!-- Add your section here -->
-    <section>
-        <!-- Edit Account Info Section -->
-        <div class="edit-account">
-            <h2>Edit Account Information</h2>
-            <form action="/update-account" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="<%= user ? user.name : '' %>">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<%= user ? user.email : '' %>">
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" value="<%= user ? user.location : '' %>">
-                <button type="submit">Save Changes</button>
-            </form>
+    <div class="container">
+        <div class="row">
+            <!-- Left Side -->
+            <div class="col-lg-6">
+                <!-- Left side content here -->
+                <!-- Left Side: Edit Profile Information -->
+                <div class="frame-left">
+                    <h2>Edit Profile</h2>
+                    <div class="edit-account">
+                        <form action="/update-account" method="post" enctype="multipart/form-data">
+                            <!-- Upload Photo -->
+                            <label for="photo">Upload Photo:</label>
+                            <input type="file" id="photo" name="photo">
+                            <!-- First Name -->
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" value="<%= user ? user.firstName : '' %>">
+                            <!-- Last Name -->
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" value="<%= user ? user.lastName : '' %>">
+                            <!-- Email -->
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" value="<%= user ? user.email : '' %>">
+                            <!-- Location -->
+                            <label for="location">Location:</label>
+                            <input type="text" id="location" name="location" value="<%= user ? user.location : '' %>">
+                            <!-- Biography/About Me -->
+                            <label for="biography">Biography/About Me:</label>
+                            <textarea id="biography" name="biography" rows="4" cols="50"><%= user ? user.biography : '' %></textarea>
+                            <!-- Save Changes Button -->
+                            <button type="submit">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    <section class="profile-section">
+        <div class="container">
+            <div class="row justify-content-end">
+                <!-- Right Side: Profile Information -->
+                <div class="col-lg-6">
+                    <div class="profile-info">
+                        <!-- Basic Info -->
+                        <h2>Basic Info</h2>
+                        <ul>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('gender')">Edit</button>
+                                <strong>Gender:</strong> 
+                                <span id="gender-display"><%= user ? user.gender : '' %></span>
+                                <!-- Text box for editing gender -->
+                                <input type="text" id="gender-input" style="display: none;">
+                            </li>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('birthday')">Edit</button>
+                                <strong>Birthday:</strong>
+                                <span id="birthday-display"><%= user ? user.birthday : '' %></span>
+                                <!-- Text box for editing birthday -->
+                                <input type="text" id="birthday-input" style="display: none;">
+                            </li>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('hometown')">Edit</button>
+                                <strong>Hometown:</strong>
+                                <span id="hometown-display"><%= user ? user.hometown : '' %></span>
+                                <!-- Text box for editing hometown -->
+                                <input type="text" id="hometown-input" style="display: none;">
+                            </li>
+                        </ul>
+                        <!-- Contact Info -->
+                        <h2>Contact Info</h2>
+                        <ul>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('email')">Edit</button>
+                                <strong>Email:</strong>
+                                <span id="email-display"><%= user ? user.email : '' %></span>
+                                <!-- Text box for editing email -->
+                                <input type="text" id="email-input" style="display: none;">
+                            </li>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('instagram')">Edit</button>
+                                <strong>Instagram:</strong>
+                                <span id="instagram-display"><%= user ? user.instagram : '' %></span>
+                                <!-- Text box for editing instagram -->
+                                <input type="text" id="instagram-input" style="display: none;">
+                            </li>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('mobile')">Edit</button>
+                                <strong>Mobile:</strong>
+                                <span id="mobile-display"><%= user ? user.mobile : '' %></span>
+                                <!-- Text box for editing mobile -->
+                                <input type="text" id="mobile-input" style="display: none;">
+                            </li>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('address')">Edit</button>
+                                <strong>Current Address:</strong>
+                                <span id="address-display"><%= user ? user.address : '' %></span>
+                                <!-- Text box for editing address -->
+                                <input type="text" id="address-input" style="display: none;">
+                            </li>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('website')">Edit</button>
+                                <strong>Website:</strong>
+                                <span id="website-display"><%= user ? user.website : '' %></span>
+                                <!-- Text box for editing website -->
+                                <input type="text" id="website-input" style="display: none;">
+                            </li>
+                        </ul>
+                        <!-- Education Info -->
+                        <h2>Education Info</h2>
+                        <ul>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('college')">Edit</button>
+                                <strong>College:</strong>
+                                <span id="college-display"><%= user ? user.college : '' %></span>
+                                <!-- Text box for editing college -->
+                                <input type="text" id="college-input" style="display: none;">
+                            </li>
+                            <li>
+                                <button class="btn btn-primary edit-button" onclick="editField('highSchool')">Edit</button>
+                                <strong>High School:</strong>
+                                <span id="highSchool-display"><%= user ? user.highSchool : '' %></span>
+                                <!-- Text box for editing high school -->
+                                <input type="text" id="highSchool-input" style="display: none;">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Social Sync Website.</p>
+    
+    
+    <script>
+        function editField(fieldName) {
+            // Toggle visibility of input field and span based on the field name
+            var inputField = document.getElementById(fieldName + '-input');
+            var displaySpan = document.getElementById(fieldName + '-display');
+            
+            if (inputField.style.display === "none") {
+                inputField.style.display = "inline";
+                displaySpan.style.display = "none";
+            } else {
+                inputField.style.display = "none";
+                displaySpan.style.display = "inline";
+            }
+        }
+    </script>
+    
+                <!-- Right Side: Status Update Section -->
+                <div class="col-lg-6">
+                    <div class="frame-right">
+                        <h2>Status Update</h2>
+                        <!-- Status Update Form -->
+                        <form action="/update-status" method="post">
+                            <div class="mb-3">
+                                <label for="statusUpdate" class="form-label">Update your status:</label>
+                                <input type="text" class="form-control" id="statusUpdate" name="statusUpdate">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <!-- Static Status Display -->
+                        <div class="mt-4">
+                            <h3>Current Status:</h3>
+                            <!-- Use JavaScript or server-side code to dynamically update this section with the user's current status -->
+                            <p id="currentStatus">No status update yet.</p>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <section class="blog-section">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="frame-left">
+                    <h2>Social Posts</h2>
+                    <!-- Input fields for creating a new blog post -->
+                    <form action="/create-blog-post" method="post">
+                        <div class="mb-3">
+                            <label for="postTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="postTitle" name="postTitle">
+                        </div>
+                        <div class="mb-3">
+                            <label for="postContent" class="form-label">Content</label>
+                            <textarea class="form-control" id="postContent" name="postContent" rows="5"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="postTags" class="form-label">Tags</label>
+                            <input type="text" class="form-control" id="postTags" name="postTags">
+                            <small class="form-text text-muted">Separate tags with commas (e.g., technology, programming, web development)</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Profile Image Section -->
+    <section class="profile-image-section">
+        <div class="container">
+            <!-- Content for Profile Image Section -->
+            <!-- You can add content and styling for the profile image here -->
+        </div>
+    </section>
+    
+    <!-- Current Status Section -->
+    <section class="current-status-section">
+        <div class="container">
+            <!-- Content for Current Status Section -->
+            <!-- You can add content and styling for the current status here -->
+        </div>
+    </section>
+    
+    <!-- Edit Account Info Section -->
+    <section class="edit-account-section">
+        <div class="container">
+            <div class="edit-account">
+                <h2>Edit Account Information</h2>
+                <form action="/update-account" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="<%= user ? user.name : '' %>">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="<%= user ? user.email : '' %>">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" value="<%= user ? user.location : '' %>">
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <p>&copy; Social Sync Website.</p>
+        </div>
     </footer>
 
     <!-- Bootstrap Bundle JS (including Popper.js) -->

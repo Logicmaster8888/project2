@@ -6,7 +6,7 @@ const passport = require('./config/passport'); // Import the Passport instance
 const path = require('path');
 const routes = require('./routes'); // Commented out the routes module
 const User = require('./models/User'); // Import the User model
-
+// const blogpostRouter = require('./routes/blogPost');
 const app = express();
 
 // Body parser middleware
@@ -36,6 +36,7 @@ app.use('/fontawesome', express.static(path.join(__dirname, 'node_modules/@forta
 // Passport middleware 
 app.use(passport.initialize());
 // app.use(passport.session());
+// app.use('/', blogpostRouter);
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://logicmaster8888:Closertothesun24@cluster0.mohcynn.mongodb.net/users', {
@@ -133,12 +134,13 @@ app.get('/create-post', (req, res) => {
     ];
 
     // Render the create-post page with blogPosts array
-    res.render('create-post', { blogPosts });
+    res.render('create-post', { blogPosts: blogPosts }); // Pass blogPosts as an object property
   } catch (error) {
     console.error('Error rendering create-post page:', error);
     res.status(500).send('Internal Server Error');
   }
 });
+
 
 
 // Middleware for redirect.ejs
@@ -153,7 +155,16 @@ app.get('/login', (req, res) => {
   res.render('login', { message: "Please login" }); // Pass "Please login" as the message
 });
 
-
+app.get('/logout', (req, res) => {
+  // Clear user session or authentication token
+  // For example, if using session:
+  req.session.destroy((err) => {
+      if (err) {
+          console.error('Error destroying session:', err);
+      }
+      res.redirect('/login'); // Redirect to the login page after logout
+  });
+});
 
 // // Use routes
 // app.use('/auth', routes); // Assuming authentication routes are defined in routes module
