@@ -1,16 +1,15 @@
 /* In profile.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background-color: #000;
     color: #333;
 }
 
 h1 {
-    color: #1877f2; /* Facebook Blue */
+    color: #63a1ff;
 }
 
 .navbar {
-    background-color: #1877f2; /* Facebook Blue */
 }
 
 .nav-link {
@@ -19,34 +18,34 @@ h1 {
 
 .container {
     padding-top: 20px;
+    background-color: initial; /* Reset to default */
 }
 
-/* Profile Box */
-.profile-info {
-    background-color: #fff;
-    border: 1px solid #dddfe2;
+.profile-content {
+    background-color: #fff; /* This can be removed to inherit Bootstrap's default */
+    border: 1px solid #dddfe2; /* This can be removed to inherit Bootstrap's default */
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
 }
 
-.profile-info h2 {
+.profile-content h2 {
     font-size: 20px;
-    color: #050505; /* Black */
+    color: #333;
     margin-bottom: 10px;
 }
 
-.profile-info ul {
+.profile-content ul {
     padding: 0;
 }
 
-.profile-info li {
+.profile-content li {
     list-style-type: none;
     margin-bottom: 10px;
 }
 
 .edit-button {
-    background-color: #1877f2; /* Facebook Blue */
+    background-color: #63a1ff;
     border: none;
     color: #fff;
     padding: 5px 10px;
@@ -55,12 +54,11 @@ h1 {
 }
 
 .edit-button:hover {
-    background-color: #0e60c5; /* Darker Facebook Blue */
+    background-color: #4077d6;
 }
 
-/* Edit Fields */
 .edit-field {
-    border: 1px solid #dddfe2;
+    border: 1px solid #dddfe2; /* This can be removed to inherit Bootstrap's default */
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 10px;
@@ -68,13 +66,13 @@ h1 {
 
 .edit-field input[type="text"] {
     width: calc(100% - 20px);
-    border: none;
-    background-color: transparent;
+    border: none; /* This can be removed to inherit Bootstrap's default */
+    background-color: #f0f2f5;
 }
 
 .edit-field input[type="text"]:focus {
     outline: none;
-    background-color: #f0f2f5;
+    background-color: #e0e5eb;
 }
 
 .display-field {
@@ -82,7 +80,6 @@ h1 {
     margin-left: 10px;
 }
 
-/* Footer */
 .footer-section {
     background-color: #f0f2f5;
     padding: 20px 0;
@@ -91,5 +88,5 @@ h1 {
 
 .footer-section p {
     margin: 0;
-    color: #65676b; /* Facebook Dark Gray */
+    color: #65676b;
 }
