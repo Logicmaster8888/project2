@@ -56,6 +56,40 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.get('/home', (req, res) => {
+  res.render('home');
+});
+
+app.get('/edit-profile', (req, res) => {
+  res.render('edit-profile');
+});
+
+app.get('/blogpost', (req, res) => {
+  // Render the create-post page since you want /blogpost to go to create-post
+  res.render('create-post');
+});
+
+app.get('/profile', (req, res) => {
+  res.render('profile');
+});
+
+// Middleware for profile.ejs
+app.get('/profile', async (req, res) => {
+  try {
+    // Your logic to fetch user profile data
+    // const userProfile = await User.findById(req.user._id);
+    // res.render('profile', { userProfile: userProfile });
+    res.render('profile'); // Rendering without data for example
+  } catch (error) {
+    console.error('Error fetching user profile data:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get('/about-us', (req, res) => {
+  res.render('about-us');
+});
+
 // Define route to render the edit.ejs file
 app.get('/edit', (req, res) => {
   try {
@@ -106,18 +140,6 @@ app.get('/create-post', (req, res) => {
   }
 });
 
-// Middleware for profile.ejs
-app.get('/profile', async (req, res) => {
-  try {
-    // Your logic to fetch user profile data
-    // const userProfile = await User.findById(req.user._id);
-    // res.render('profile', { userProfile: userProfile });
-    res.render('profile'); // Rendering without data for example
-  } catch (error) {
-    console.error('Error fetching user profile data:', error);
-    res.status(500).send('Internal Server Error');
-  }
-});
 
 // Middleware for redirect.ejs
 app.get('/redirect', (req, res) => {
