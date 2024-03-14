@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const passport = require('passport');
+const passport = require('./config/passport'); // Import the Passport instance
+const session = require('express-session'); // Import express-session for session support
 const path = require('path');
 const routes = require('./routes');
 const User = require('./models/User'); // Import the User model
@@ -19,26 +20,59 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Initialize express-session middleware
+app.use(session({
+  secret: 'secret', // Change this to a long random string in production
+  resave: false,
+  saveUninitialized: false
+}));
+
 // Passport middleware 
 app.use(passport.initialize());
-
-// Load Passport configuration
-require('./config/passport')(passport);
+app.use(passport.session());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/my_database', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+mongoose.connect('mongodb+srv://logicmaster8888:Closertothesun24@cluster0.mohcynn.mongodb.net/users', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.log(err));
 
 // Define route to render the index.ejs file as the landing page
 app.get('/', async (req, res) => {
   try {
-    // Fetch user data from MongoDB or wherever it's stored
-    const user = await User.findById(userId); // You need to define how you fetch the user data
-    // Render the index page with user data
-    res.render('index', { user: user }); // Assuming your index.ejs file is located in the views directory
+    // Check if user is authenticated
+    if (req.isAuthenticated()) {
+      const userId = req.user._id; // Assuming req.user contains the authenticated user's information
+      const user = await User.findById(userId);
+      // Render the index page with user data
+      res.render('index', { user: user }); // Assuming your index.ejs file is located in the views directory
+    } else {
+      // Redirect to login page if not authenticated
+      res.redirect('/auth/login');
+    }
   } catch (error) {
     console.error('Error fetching user data:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+// Define route to render the edit.ejs file
+app.get('/edit', async (req, res) => {
+  try {
+    // Check if user is authenticated
+    if (req.isAuthenticated()) {
+      const userId = req.user._id; // Assuming req.user contains the authenticated user's information
+      const user = await User.findById(userId);
+      // Render the edit page with user data
+      res.render('edit', { user: user }); // Assuming your edit.ejs file is located in the views directory
+    } else {
+      // Redirect to login page if not authenticated
+      res.redirect('/auth/login');
+    }
+  } catch (error) {
+    console.error('Error fetching user data for edit page:', error);
     res.status(500).send('Internal Server Error');
   }
 });
@@ -59,7 +93,7 @@ app.post('/create-post', (req, res) => {
 });
 
 // Use routes
-app.use('/', routes);
+app.use('/auth', routes); // Assuming authentication routes are defined in routes module
 
 // Define port
 const PORT = process.env.PORT || 5000;
