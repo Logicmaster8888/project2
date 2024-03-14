@@ -8,6 +8,11 @@ router.get('/', (req, res) => {
   res.send(message);
 });
 
+// router.get('/', (req, res) => {
+//     // Assuming you have an index.ejs file in your views directory
+//     res.render('index', { title: 'Homepage', message: 'Welcome to our server!' });
+//   });
+
 router.get('/edit', (req, res) => {
     console.log(`This is your edit profile page`);
   

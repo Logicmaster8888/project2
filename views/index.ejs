@@ -20,9 +20,10 @@
             <img src="profile-picture.jpg" alt="Profile Picture">
             <h2><%= user.name %></h2>
             <p>Email: <%= user.email %></p>
-            <p>Location: <%= user.location %></p>
+            <p>Location: <%= user.location || 'Not specified' %></p> <!-- Show 'Not specified' if location is not available -->
             <button>Edit Profile</button>
         </div>
+    </div>    
 
         <!-- Edit Account Info Section -->
         <div class="edit-account">

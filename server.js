@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
 const routes = require('./routes');
+const User = require('./models/User'); // Import the User model
 
 const app = express();
 
@@ -29,9 +30,17 @@ mongoose.connect('mongodb://localhost:27017/my_database', { useNewUrlParser: tru
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-
-  app.get('/create-post', (req, res) => {
-    res.render('create-post');
+// Define route to render the index.ejs file as the landing page
+app.get('/', async (req, res) => {
+  try {
+    // Fetch user data from MongoDB or wherever it's stored
+    const user = await User.findById(userId); // You need to define how you fetch the user data
+    // Render the index page with user data
+    res.render('index', { user: user }); // Assuming your index.ejs file is located in the views directory
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 // Define a route to handle the form submission and create a new blog post
@@ -44,15 +53,13 @@ app.post('/create-post', (req, res) => {
     res.redirect('/create-post');
 });
 
-  // Define a route to handle the POST request for creating a blog post
+// Define a route to handle the POST request for creating a blog post
 app.post('/create-post', (req, res) => {
   res.status(404).send("Cannot POST /create-post");
 });
 
 // Use routes
 app.use('/', routes);
-
-
 
 // Define port
 const PORT = process.env.PORT || 5000;
