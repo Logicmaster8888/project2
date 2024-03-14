@@ -9,9 +9,9 @@ h1 {
     color: #007bff;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+.container.custom {
+    width: 100%;
+    margin: 0;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
@@ -19,7 +19,7 @@ h1 {
 }
 
 /* Profile Box */
-.profile-box {
+.profile-box.custom {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
@@ -27,14 +27,14 @@ h1 {
     margin-bottom: 20px;
 }
 
-.profile-box img {
+.profile-box.custom img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
-.profile-box button {
+.profile-box.custom button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -43,33 +43,33 @@ h1 {
     cursor: pointer;
 }
 
-.profile-box button:hover {
+.profile-box.custom button:hover {
     background-color: #0056b3;
 }
 
 /* Edit Account Info Section */
-.edit-account {
+.edit-account.custom {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
 }
 
-.edit-account h2 {
+.edit-account.custom h2 {
     margin-bottom: 20px;
 }
 
-.edit-account label {
+.edit-account.custom label {
     display: block;
     margin-bottom: 10px;
 }
 
-.edit-account input {
+.edit-account.custom input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
 }
 
-.edit-account button {
+.edit-account.custom button {
     background-color: #28a745;
     color: #fff;
     border: none;
@@ -78,6 +78,6 @@ h1 {
     cursor: pointer;
 }
 
-.edit-account button:hover {
+.edit-account.custom button:hover {
     background-color: #218838;
 }
