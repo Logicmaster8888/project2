@@ -29,8 +29,30 @@ mongoose.connect('mongodb://localhost:27017/my_database', { useNewUrlParser: tru
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
+
+  app.get('/create-post', (req, res) => {
+    res.render('create-post');
+});
+
+// Define a route to handle the form submission and create a new blog post
+app.post('/create-post', (req, res) => {
+    // Code to handle form submission and create a new blog post
+    const { title, content } = req.body;
+    // Code to save the blog post to the database or perform other actions
+    // Here we'll just log the submitted data
+    console.log('Submitted Blog Post:', { title, content });
+    res.redirect('/create-post');
+});
+
+  // Define a route to handle the POST request for creating a blog post
+app.post('/create-post', (req, res) => {
+  res.status(404).send("Cannot POST /create-post");
+});
+
 // Use routes
 app.use('/', routes);
+
+
 
 // Define port
 const PORT = process.env.PORT || 5000;
