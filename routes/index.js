@@ -9,9 +9,22 @@ router.get('/', (req, res) => {
 });
 
 router.get('/edit', (req, res) => {
-  console.log(`This is your edit profile page`);
-  res.render("edit", { title: "Edit Your Profile", message:"Edit your Profile"});
-});
+    console.log(`This is your edit profile page`);
+  
+    // Assuming 'user' contains user data retrieved from somewhere (e.g., a database)
+    const user = {
+      name: "John Doe",
+      email: "john@example.com",
+      location: "New York"
+      // Add more user data properties as needed
+    };
+  
+    res.render("edit", { 
+      title: "Edit Your Profile", 
+      message: "Edit your Profile", 
+      user: user // Pass the 'user' object to the template
+    });
+  });
 
 router.get("/home", (req, res) => {
   res.render("index", { title: "Homepage", message:"Welcome to Social Sync!"});

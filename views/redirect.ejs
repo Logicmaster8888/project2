@@ -14,30 +14,16 @@
 <body>
     <% include('partials/header') %> 
 
+    <!-- Error message -->
     <div class="container">
-        <!-- Profile Box -->
-        <div class="profile-box">
-            <img src="<%= user.profilePicture %>" alt="Profile Picture">
-            <h2><%= user.name %></h2>
-            <p>Email: <%= user.email %></p>
-            <p>Location: <%= user.location %></p>
-            <button>Edit Profile</button>
-        </div>
-
-        <!-- Edit Account Info Section -->
-        <div class="edit-account">
-            <h2>Edit Account Information</h2>
-            <form action="/update-account" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="<%= user.name %>">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<%= user.email %>">
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" value="<%= user.location %>">
-                <button type="submit">Save Changes</button>
-            </form>
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Redirect Error!</h4>
+            <p>Sorry, an error occurred while processing your request. You are being redirected.</p>
+            <hr>
+            <p class="mb-0">If you are not automatically redirected, please click <a href="/">here</a> to return to the homepage.</p>
         </div>
     </div>
+    
     <% include('partials/footer') %>
 
     <!-- Bootstrap Bundle JS (including Popper.js) -->

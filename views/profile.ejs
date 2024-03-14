@@ -14,37 +14,29 @@
 <body>
     <% include('partials/header') %> 
 
+    <!-- Form -->
     <div class="container">
-        <!-- Profile Box -->
-        <div class="profile-box">
-            <img src="profile-picture.jpg" alt="Profile Picture">
-            <h2><%= user.name %></h2>
-            <p>Email: <%= user.email %></p>
-            <p>Location: <%= user.location %></p>
-            <button>Edit Profile</button>
-        </div>
-
-        <!-- Edit Account Info Section -->
-        <div class="edit-account">
-            <h2>Edit Account Information</h2>
-            <form action="/update-account" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="<%= user.name %>">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<%= user.email %>">
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" value="<%= user.location %>">
-                <button type="submit">Save Changes</button>
-            </form>
-        </div>
+        <h2>Edit Profile</h2>
+        <form action="/update-profile" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter your location">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
     </div>
+    
     <% include('partials/footer') %>
 
     <!-- Bootstrap Bundle JS (including Popper.js) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Your custom JavaScript -->
-    <script>
-        // Add your custom JavaScript code here
-    </script>
-</body>
-</html>
+    <s
