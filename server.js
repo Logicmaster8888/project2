@@ -11,14 +11,33 @@ const path = require('path')
 
 const app = express();
 
+// Controllers have to add the names and controllers to the name
+const blogPost = require('./controllers/blogPostController')
+const editProfile = require('./controllers/editProfileController')
+const homeController = require('./controllers/homeController')
+const newPostController = require('./controllers/newPostController')
+const profileController = require('./controllers/profileController')
+const searchController = require('/controllers/searchController')
+
+// MODELS
+const blogPosts = require('./models/blogPost')
+const profile = require('./models/profile')
+
+// MIDDLEWARES
 app.use(morgan('tiny'));
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(methodOverride('_method'));
 
-// app.use(fruitsController);
-// app.use(pokemonController);
+// App - USE
+app.use(blogPostController);
+app.use(editProfileController);
+app.use(homeController);
+app.use(newPostController);
+app.use(profileController);
+app.use(searchController);
+
 
 // SET the Views Directory
 app.set("view engine", "ejs");

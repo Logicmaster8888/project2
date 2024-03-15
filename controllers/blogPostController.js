@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Pulling from models database
 const blogPosts = require('../models/blogPost')
-
+const Profile = require('../models/profile')
 
 
 router.get('/blogPost', (req, res) => {
@@ -13,6 +13,10 @@ router.get('/blogPost', (req, res) => {
 router.get('/blogPost/:name', (req , res) => {
     res.send({blogPost: blogPost.filter(p => p === req.params.name)})
 })
+
+// all of the blogs and pull them based of the user
+// that's my next challenge
+
 // change blog post and home
 // home
 // work through it all
