@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 
 // Pulling from models database
-const blogPosts = require('../models/blogPost')
+const blogPosts = require('../models/blogPosts')
 const profile = require('../models/profile')
 
 // INDEX
@@ -17,6 +17,18 @@ router.get('/profile', (req, res) => {
 router.get('/profile/editProfile', (req, res) => {
     res.render('editprofile.ejs', { profile })
 })
+
+router.get('/profile', async (req, res) => {
+    try {
+      // Your logic to fetch user profile data
+      // const userProfile = await User.findById(req.user._id);
+      // res.render('profile', { userProfile: userProfile });
+      res.render('profile.ejs'); // Rendering without data for example
+    } catch (error) {
+      console.error('Error fetching user profile data:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 
 // Endpoint
 
