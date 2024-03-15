@@ -4,9 +4,14 @@ const router = express.Router();
 // Pulling from models database
 const blogPosts = require('../models/blogPost')
 
-// INDEX
-router.get('/blogPost', (req , res) => {
-    res.render('index.ejs', { blogPosts })
+
+
+router.get('/blogPost', (req, res) => {
+    res.render('blogPost.ejs')
+}) 
+
+router.get('/blogPost/:name', (req , res) => {
+    res.send({blogPost: blogPost.filter(p => p === req.params.name)})
 })
 // change blog post and home
 // home
@@ -45,8 +50,4 @@ router.get('/blogPost', (req , res) => {
 // With design and the functions. I can write them out without the other parts of the logic.
 //committing and rebuilding the app this is where you can continue to function and build it out.
 
-// NEW
-
-router.get('/blogPost'), (req, res) => {
-    res.render('new.ejs')
-}
+module.exports = router

@@ -5,10 +5,15 @@ const router = express.Router();
 const blogPosts = require('../models/blogPost')
 
 // INDEX
-router.get('/blogPost', (req , res) => {
-    res.render('index.ejs', { blogPosts })
+router.get('/search', (req , res) => {
+    res.render('search.ejs', { blogPosts })
 })
+// need all blogPosts
 
-router.get('/blogPost'), (req, res) => {
-    res.render('new.ejs')
-}
+// new a new to create a blogPost
+router.get('/search/new', (req, res) => {
+    res.render('newPost.ejs')
+})
+// have a new Post for each of the files because we need to have them drive new Post Content
+// Sign In have their own posts and own files, that is the hard part. For real. Authentication
+
