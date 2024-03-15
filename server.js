@@ -92,20 +92,20 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-  res.render('home');
+  res.render('home.ejs');
 });
 
-app.get('/edit-profile', (req, res) => {
-  res.render('edit-profile');
+app.get('/editProfile', (req, res) => {
+  res.render('editProfile.ejs');
 });
 
 app.get('/blogpost', (req, res) => {
   // Render the create-post page since you want /blogpost to go to create-post
-  res.render('create-post');
+  res.render('blogPost.ejs');
 });
 
 app.get('/profile', (req, res) => {
-  res.render('profile');
+  res.render('profile.ejs');
 });
 
 // Middleware for profile.ejs
@@ -114,22 +114,22 @@ app.get('/profile', async (req, res) => {
     // Your logic to fetch user profile data
     // const userProfile = await User.findById(req.user._id);
     // res.render('profile', { userProfile: userProfile });
-    res.render('profile'); // Rendering without data for example
+    res.render('profile.ejs'); // Rendering without data for example
   } catch (error) {
     console.error('Error fetching user profile data:', error);
     res.status(500).send('Internal Server Error');
   }
 });
 
-app.get('/about-us', (req, res) => {
-  res.render('about-us');
+app.get('/about', (req, res) => {
+  res.render('about.ejs');
 });
 
 // Define route to render the edit.ejs file
 app.get('/edit', (req, res) => {
   try {
     // Render the edit page with user as null
-    res.render('edit', { user: null }); // Assuming your edit.ejs file is located in the views directory
+    res.render('edit.ejs', { user: null }); // Assuming your edit.ejs file is located in the views directory
   } catch (error) {
     console.error('Error rendering edit page:', error);
     res.status(500).send('Internal Server Error');
@@ -139,10 +139,10 @@ app.get('/edit', (req, res) => {
 
 // Define a route to handle the form submission and create a new blog post
 // Define route to render the create-post.ejs file
-app.get('/create-post', (req, res) => {
+app.get('/newPost', (req, res) => {
   try {
     // Render the create-post page with user as null
-    res.render('create-post', { user: null }); // Assuming your create-post.ejs file is located in the views directory
+    res.render('newPost.ejs', { user: null }); // Assuming your create-post.ejs file is located in the views directory
   } catch (error) {
     console.error('Error rendering create-post page:', error);
     res.status(500).send('Internal Server Error');
@@ -150,7 +150,7 @@ app.get('/create-post', (req, res) => {
 });
 
 // Define a route to handle the form submission and create a new blog post
-app.get('/create-post', (req, res) => {
+app.get('/newPost', (req, res) => {
   try {
     // Assuming you have an array of blog posts named blogPosts
     const blogPosts = [
@@ -168,7 +168,7 @@ app.get('/create-post', (req, res) => {
     ];
 
     // Render the create-post page with blogPosts array
-    res.render('create-post', { blogPosts: blogPosts }); // Pass blogPosts as an object property
+    res.render('newPost.ejs', { blogPosts: blogPosts }); // Pass blogPosts as an object property
   } catch (error) {
     console.error('Error rendering create-post page:', error);
     res.status(500).send('Internal Server Error');
@@ -178,15 +178,15 @@ app.get('/create-post', (req, res) => {
 
 
 // Middleware for redirect.ejs
-app.get('/redirect', (req, res) => {
-  // Your logic for the redirect page
-  res.render('redirect');
-});
+// app.get('/redirect', (req, res) => {
+//   // Your logic for the redirect page
+//   res.render('redirect,ejs');
+// });
 
 //
 // Middleware for login.ejs
 app.get('/login', (req, res) => {
-  res.render('login', { message: "Please login" }); // Pass "Please login" as the message
+  res.render('login.ejs', { message: "Please login" }); // Pass "Please login" as the message
 });
 
 app.get('/logout', (req, res) => {
@@ -196,7 +196,7 @@ app.get('/logout', (req, res) => {
       if (err) {
           console.error('Error destroying session:', err);
       }
-      res.redirect('/login'); // Redirect to the login page after logout
+      res.redirect('/login.ejs'); // Redirect to the login page after logout
   });
 });
 

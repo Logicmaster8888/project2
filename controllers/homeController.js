@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Pulling from models database
 const blogPosts = require('../models/blogPost')
-const Profile = require('../models/profile')
+const profile = require('../models/profile')
 
 // I need the database pull for all of the connecting pieces
 
