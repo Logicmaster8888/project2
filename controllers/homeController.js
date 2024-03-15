@@ -9,13 +9,13 @@ const profile = require('../models/profile')
 
 
 // INDEX = HOME
-router.get('/', (req , res) => {
-    res.render('index.ejs',)
-}) // profile is home base
+// router.get('/', (req , res) => {
+//     res.render('index.ejs',)
+// }) // profile is home base
 
 // Repetition for Home being home base and Index as well
 router.get('/home', (req , res) => {
-    res.render('index.ejs',)
+    res.render('index',)
 })
 
 // edit profile is another function to think about
@@ -23,11 +23,11 @@ router.get('/home', (req , res) => {
 // NEW - Send back a form to create a new blogPost
 // variables all going together
 router.get('/home/new', (req, res) => {
-    res.render('newPost.ejs')
+    res.render('newPost')
 })
 
 router.get('/home/editProfile', (req, res) => {
-    res.render('editProfile.ejs')
+    res.render('editProfile')
 })
 
 // router.get('/', async (req, res) => {
@@ -48,4 +48,4 @@ router.get('/home/editProfile', (req, res) => {
 // profile that is the stand alone
 // blog posts
 
-module.exports = router
+module.exports = router;
