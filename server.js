@@ -38,6 +38,8 @@ app.use(newPostController);
 app.use(profileController);
 app.use(searchController);
 
+// my code looks really good!
+// the standard use of the codification.
 
 // SET the Views Directory
 app.set("view engine", "ejs");
@@ -46,7 +48,8 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 5000;
 
 
-
+// 
+// Let's Clean it all up. 
 
 // Serve static files from the public directory
 // app.use(express.static(path.join(__dirname, 'public')));
