@@ -30,15 +30,15 @@ router.get('/home/editProfile', (req, res) => {
     res.render('editProfile.ejs')
 })
 
-router.get('/', async (req, res) => {
-    try {
-      // Render the index page with user as null
-      res.render('index', { user: null }); // Assuming your index.ejs file is located in the views directory
-    } catch (error) {
-      console.error('Error rendering index page:', error);
-      res.status(500).send('Internal Server Error');
-    }
-  });
+// router.get('/', async (req, res) => {
+//     try {
+//       // Render the index page with user as null
+//       res.render('index', { user: null }); // Assuming your index.ejs file is located in the views directory
+//     } catch (error) {
+//       console.error('Error rendering index page:', error);
+//       res.status(500).send('Internal Server Error');
+//     }
+//   });
 // Endpoint
 
 
