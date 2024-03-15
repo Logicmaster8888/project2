@@ -9,6 +9,9 @@ router.get('/blogPost', (req , res) => {
     res.render('index.ejs', { blogPosts })
 })
 
+// NEW - Send back a form to create a new blogPost
+// variables all going together
 router.get('/blogPost'), (req, res) => {
-    res.render('new.ejs')
+    res.render('blogPost.ejs')
 }
+

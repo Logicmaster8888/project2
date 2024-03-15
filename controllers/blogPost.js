@@ -18,7 +18,12 @@ router.get('/blogPost', (req , res) => {
 // blogPost - talk about their blog posts
 // profile - show their account 
 // Login after - that is all that I need. It comes to the point of Instagram as the example
+// set it up for the same
 
+// make sure I am talented and breakdown what is available to tackle into the next steps! they won't see it coming!
+
+// Home and Profile go to the same place. I need to code it into place. This will look amazing, and have it all done. I code so much faster than the
+// rest of them. 
 
 // models only need blogposts
 // it will contain all of them and building out that function
@@ -39,6 +44,9 @@ router.get('/blogPost', (req , res) => {
 // Have it all written out and designed out and make it look amazing.
 // With design and the functions. I can write them out without the other parts of the logic.
 //committing and rebuilding the app this is where you can continue to function and build it out.
+
 // NEW
 
-router.get('/blogPost')
+router.get('/blogPost'), (req, res) => {
+    res.render('new.ejs')
+}
