@@ -10,3 +10,5 @@ const allBlogPostsSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('AllBlogPosts', allBlogPostsSchema);
+// check the function for what is available
+
