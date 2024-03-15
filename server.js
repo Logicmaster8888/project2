@@ -1,30 +1,42 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const passport = require('./config/passport'); // Import the Passport instance
-// const session = require('express-session'); // Import express-session for session support
-const path = require('path');
-const routes = require('./routes'); // Commented out the routes module
-const User = require('./models/User'); // Import the User model
-// const blogpostRouter = require('./routes/blogPost');
+const express = require('express')
+const methodOverride = require('method-override');
+const morgan = require('morgan');
+// const fruitsController = require('./controllers/fruitsController');
+// const pokemonController = require('./controllers/pokemonController');
+// const Fruit = require('./models/fruits');
+// const Pokemon = require('./models/pokemon');
+const mongoose = require('mongoose')
+const path = require('path')
+
+
 const app = express();
 
-// Body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(morgan('tiny'));
+app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+app.use(methodOverride('_method'));
+
+// app.use(fruitsController);
+// app.use(pokemonController);
 
 // SET the Views Directory
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
+
+const PORT = process.env.PORT || 5000;
+
+
+
 
 // Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve Bootstrap CSS file
-app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+// app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 
 // Serve Font Awesome CSS file
-app.use('/fontawesome', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/css')));
+// app.use('/fontawesome', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/css')));
 
 // Initialize express-session middleware
 // app.use(session({
@@ -34,7 +46,7 @@ app.use('/fontawesome', express.static(path.join(__dirname, 'node_modules/@forta
 // }));
 
 // Passport middleware 
-app.use(passport.initialize());
+// app.use(passport.initialize());
 // app.use(passport.session());
 // app.use('/', blogpostRouter);
 
@@ -169,8 +181,7 @@ app.get('/logout', (req, res) => {
 // // Use routes
 // app.use('/auth', routes); // Assuming authentication routes are defined in routes module
 
-// Define port
-const PORT = process.env.PORT || 5000;
+
 
 // Start server
 app.listen(PORT, () => { 
