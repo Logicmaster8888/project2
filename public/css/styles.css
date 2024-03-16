@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek');
 
 body {
-  background: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"),
-             url("https://amymhaddad.s3.amazonaws.com/oriental-tiles.png");
+    background-image: url('https://imgur.com/a/B19rxY2');
+    background-size: cover; 
+    background-repeat: no-repeat; 
   margin: 0;
   font-family: 'Comfortaa', cursive;
 }
@@ -16,6 +17,26 @@ h1, span, p {
   padding: 1em;
   text-align: center;
 }
+
+
+nav {
+    float: right;
+}
+.button {
+    color: #FFFFFF; /* White text */
+    background: #0084FF; /* MySpace link blue */
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+    font-size: 1em;
+    padding: 0.5em 1em; /* Adjust padding for spacing */
+    margin: 0.5em; /* Adjust margin for spacing */
+    border-radius: 10%;
+  }
+  
+  .button:hover {
+    background: #0056b3; /* Darker shade of MySpace link blue on hover */
+  }
+  
 
 h4 {
   text-align: center;
