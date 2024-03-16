@@ -1,27 +1,51 @@
-// Profile and Home are the same directional path!
-
-// getting my code up and running let's build it out!
 const mongoose = require('mongoose');
 
 const profileSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    password: {
+    accountName: {
         type: String,
         required: true
     },
-    createdAt: {
+    location: {
+        type: String
+    },
+    lastUpdate: {
         type: Date,
         default: Date.now
+    },
+    gender: {
+        type: String,
+        enum: ['male', 'female', 'unspecified']
+    },
+    birthday: {
+        type: Date
+    },
+    hometown: {
+        type: String
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    instagram: {
+        type: String
+    },
+    mobile: {
+        type: String
+    },
+    address: {
+        type: String
+    },
+    website: {
+        type: String
+    },
+    college: {
+        type: String
+    },
+    highSchool: {
+        type: String
     }
 });
 
-module.exports = mongoose.model('Profile', profileSchema);
+const Profile = mongoose.model('Profile', profileSchema);
+
+module.exports = Profile;

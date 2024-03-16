@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/styles.css">  
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/forms.css">  
+  
 </head>
 <body>
+    <div class="container custom">
+        <form action="/login" method="POST" class="login-form custom">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
     <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
     <h1>Create New Post</h1>
     <form action="/blogPost/" method="POST">
    <%- include('./partials/profileInputs.ejs')%>
+   <%- include('./partials/status.ejs')%>
     </form>
     <a href="/index">Go Back</a>
 </body>

@@ -7,26 +7,40 @@ const profile = require('../models/profile')
 // edit profile pulls from Profile models
 
 // INDEX
-router.get('/editProfile', (req , res) => {
+router.get('/blogPosts/editProfile', (req , res) => {
     res.render('editProfile', { Profile })
 })
 
 
+router.get('/blogPosts', (req, res) => {
+   res.render('index.ejs', { blogPosts })
+}) // shoots to index
+
+// GET ROUTE
+router.get('/blogPosts/new', (req, res) => {
+    res.render('newPost.ejs')
+})
+
+// DELETE ROUTE
+router.delete('/blogPosts/:index', (req, res) => {
+    blogPosts.splice(req.params.index, 1)
+    res.redirect('/blogPosts')
+}) // models
+
+// POST ROUTE
+router.post("/blogPosts/", (req, res) => {
+    req.body.readyToEat = req.body.readyToEat === 'on' ? true : false;
+    blogPosts.push(req.body);
+    res.render('index.ejs', { blogPosts });
+});
+
+// SHOW ROUTE
+router.get('/blogPosts/:index', (req, res) => {
+    console.log(req.params.index)
+    const blogPost = blogPosts [req.params.index]
+    res.render('show.ejs', {blogPost})
+})
+
+module.exports = router 
 
 
-// data grabbed from profile models
-// edit profile is another function to think about
-// show options to search, home, create new, logout
-// correct wireframes and connecting pieces
-
-// NEW - Send back a form to create a new blogPost
-// variables all going together
-
-// End Point 
-// Stand Alone
-
-// become unstoppable as a coder! Let's F Go! 
-
-// same function as home.js and displaying
-
-module.exports = router;

@@ -7,10 +7,12 @@ const morgan = require('morgan');
 const fruitsController = require('./controllers/fruitsController');
 const pokemonController = require('./controllers/pokemonController');
 const blogPostsController = require('./controllers/blogPostsController');
+const editProfileController = require('./controllers/editProfileController');
 // Import models
 const fruits = require('./models/fruits');
 const pokemon = require('./models/pokemon');
 const blogPosts = require('./models/blogPosts');
+const profile = require('./models/profile');
 
 // Initialize Express app
 const app = express();
@@ -32,6 +34,7 @@ app.use(methodOverride('_method')); // Method override
 app.use(fruitsController); // Fruits routes
 app.use(pokemonController); // Pokemon routes
 app.use(blogPostsController);
+app.use(editProfileController);
 
 // Start the server
 app.listen(PORT, () => {
