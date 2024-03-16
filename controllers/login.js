@@ -1,19 +1,15 @@
-// const express = require('express')
+// const express = require('express');
 // const router = express.Router();
 
-// // Pulling from models database
-// const blogPosts = require('../models/blogPosts')
-// const profile = require('../models/profile')
-// const login = require('../models/login')
-// // edit profile pulls from Profile models
+// // Define routes
+// router.get('/', (req, res) => {
+//     res.send('Blog Posts Home Page');
+// });
 
+// router.get('/post/:id', (req, res) => {
+//     const postId = req.params.id;
+//     res.send(`Viewing Blog Post ${postId}`);
+// });
 
-// // LOGIN
-// router.get('/login', (req, res) => {
-//     res.render('login', { message: "Please login" }); // Pass "Please login" as the message
-//   });
-
-// // End Point
-// // Stand Alone
-
+// // Export the router object
 // module.exports = router;

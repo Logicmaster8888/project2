@@ -1,83 +1,62 @@
-/* In profile.css */
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+  background: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"),
+             url("https://amymhaddad.s3.amazonaws.com/oriental-tiles.png");
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
 }
 
-h1 {
-    color: #007bff;
+h1, span, p {
+  font-family: 'Righteous', cursive;
+  background: #3B5998; /* MySpace blue */
+  color: #FFFFFF; /* White text */
+  margin: 0;
+  margin-bottom: .5em;
+  padding: 1em;
+  text-align: center;
 }
 
-.container.custom {
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+h4 {
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.5em;
+  background: rgba(193, 235, 187, .9);
 }
 
-/* Profile Box */
-.profile-box.custom {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
+a {
+  color: #0084FF; /* MySpace link blue */
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.5em;
 }
 
-.profile-box.custom img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+a:hover {
+  color: #FFFFFF; /* White text on hover */
 }
 
-.profile-box.custom button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+ul {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.profile-box.custom button:hover {
-    background-color: #0056b3;
+li {
+  list-style: none;
 }
 
-/* Edit Account Info Section */
-.edit-account.custom {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
+li a {
+  color: #0084FF; /* MySpace link blue */
 }
 
-.edit-account.custom h2 {
-    margin-bottom: 20px;
+input[type=text] {
+  padding: .3em;
 }
 
-.edit-account.custom label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.edit-account.custom input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-.edit-account.custom button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.edit-account.custom button:hover {
-    background-color: #218838;
+input[type=submit] {
+  padding: .3em;
+  color: #FFFFFF; /* White text */
+  background: #0084FF; /* MySpace link blue */
+  font-size: 1em;
+  border-radius: 10%;
 }
