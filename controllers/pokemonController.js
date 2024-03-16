@@ -7,6 +7,6 @@ router.get('/pokemon/:name', (req, res) => {
     res.send({pokemon: pokemon.filter(p => p === req.params.name)})
 }) 
 
-module.exports = router
+module.exports = router;
 
 
