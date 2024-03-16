@@ -1,18 +1,39 @@
+
 const express = require('express')
 const router = express.Router();
-const bodyParser = require('body-parser');
 
-
-// Pulling from models database
+const fruits = require('../models/fruits')
 const blogPosts = require('../models/blogPosts')
-const profile = require('../models/profile')
-
-// router.use(express.urlencoded({ extended: true }));
-// INDEX
-// router.get('/newPost', (req , res) => {
-//     res.render('newPost', {  })
-// }) // input function for newPosts and all existing past Blogposts or none of them just for the function
 
 
+router.get('/blogPosts', (req, res) => {
+   res.render('index.ejs', { blogPosts })
+}) // shoots to index
 
-module.exports = router
+// GET ROUTE
+router.get('/blogPosts/new', (req, res) => {
+    res.render('newPost.ejs')
+})
+
+// DELETE ROUTE
+router.delete('/blogPosts/:index', (req, res) => {
+    blogPosts.splice(req.params.index, 1)
+    res.redirect('/blogPosts')
+}) // models
+
+// POST ROUTE
+router.post("/blogPosts/", (req, res) => {
+    req.body.readyToEat = req.body.readyToEat === 'on' ? true : false;
+    blogPosts.push(req.body);
+    res.render('index.ejs', { blogPosts });
+});
+
+// SHOW ROUTE
+router.get('/blogPosts/:index', (req, res) => {
+    console.log(req.params.index)
+    const blogPost = blogPosts [req.params.index]
+    res.render('show.ejs', {blogPost})
+})
+
+module.exports = router 
+

@@ -9,9 +9,9 @@
 <body>
     <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
     <h1>Create New Post</h1>
-    <form action="/newPost/" method="POST">
+    <form action="/blogPost/" method="POST">
    <%- include('./partials/profileInputs.ejs')%>
     </form>
-    <a href="/">Go Back</a>
+    <a href="/index">Go Back</a>
 </body>
 </html>

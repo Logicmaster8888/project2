@@ -8,7 +8,7 @@ const blogPosts = require('../models/blogPosts')
 
 router.get('/blogPosts', (req, res) => {
    res.render('index.ejs', { blogPosts })
-})
+}) // shoots to index
 
 // GET ROUTE
 router.get('/blogPosts/new', (req, res) => {
