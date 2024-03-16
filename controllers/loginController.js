@@ -1,4 +1,5 @@
 
+
 const express = require('express')
 const router = express.Router();
 
@@ -7,10 +8,9 @@ const blogPosts = require('../models/blogPosts')
 
 
 // New POST 
-router.get('/newPost', (req , res) => {
-    res.render('newPost')
+router.get('/login', (req , res) => {
+    res.render('login')
 })
-// COMPLETED
 
 // GET ROUTE
 router.get('/blogPosts/new', (req, res) => {

@@ -6,11 +6,11 @@ const blogPosts = require('../models/blogPosts')
 const profile = require('../models/profile')
 // edit profile pulls from Profile models
 
-// INDEX
-router.get('/blogPosts/editProfile', (req , res) => {
-    res.render('editProfile', { Profile })
+// EDIT PROFILE
+router.get('/editProfile', (req , res) => {
+    res.render('editProfile')
 })
-
+// DONE 
 
 router.get('/blogPosts', (req, res) => {
    res.render('index.ejs', { blogPosts })
