@@ -12,7 +12,7 @@ router.get('/blogPosts', (req, res) => {
 
 // GET ROUTE
 router.get('/blogPosts/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('newPost.ejs')
 })
 
 // DELETE ROUTE
