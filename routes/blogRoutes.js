@@ -1,10 +1,16 @@
 
 const express = require("express");
 const router = express.Router();
-// const {getBlog} = require("../")
+const { 
+        getBlogs,
+        createBlog,
+        getBlog,
+        updateBlog,
+        deleteBlog,
+    } = require("../controllers/blog1Controller");
 
-//@desc Delete Blog
-//@AbortController
+// @desc Delete Blog
+// @AbortController
 
 // router.route("/api/blogs", (req, res) => {
 //     res.status(200).json({ Message: "Can I send code through here?"});
