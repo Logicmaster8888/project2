@@ -3,6 +3,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 
+
 // Import controllers
 // const fruitsController = require('./controllers/fruitsController');
 const pokemonController = require('./controllers/pokemonController');
@@ -26,7 +27,7 @@ app.set('view engine', 'ejs');
 // app.set('views', path.join(__dirname, 'views'));
 
 // Set port
-const PORT = process.env.PORT || 8000; // PORT defined as 8000; 
+const PORT = process.env.PORT || 9000; // PORT defined as 8000; 
 
 // Middleware
 app.use(morgan('tiny')); // Logging
@@ -43,6 +44,16 @@ app.use(editProfileController);
 app.use(profileController);
 app.use(loginController);
 app.use(homeController);
+
+// app.get("/api/blogs", (req, res) => {
+//     res.json({message: "Get all blogs"});
+// });
+
+// app.get("/api/blogs", (req, res) => {
+//     res.status(200).json({message: "Get all blogs"});
+// });
+
+app.use("/api/blogs", require("./routes/blogRoutes"));
 
 // Start the server
 app.listen(PORT, () => { // callback V

@@ -1,29 +1,47 @@
 
+const express = require("express");
+const router = express.Router();
+// const {getBlog} = require("../")
 
 //@desc Delete Blog
 //@AbortController
 
-const express = require("express");
+// router.route("/api/blogs", (req, res) => {
+//     res.status(200).json({ Message: "Can I send code through here?"});
+// });
 
-const router = express.Router();
+// GET ROUTE
+router.route("/").get((req, res) => {
+    res.status(200).json({message: `Get all Blogs`});
+});
 
-const {
-    getContacts,
-    createContact,
-    getContact,
-    updateContact,
-    deleteContact,
-} = require("../controllers/contactController");
+// POST ROUTE
+router.route("/").post((req, res) => {
+    res.status(200).json({message: `Create Blog`});
+});
 
+// CREATE ROUTE
+router.route("/:id").get((req, res) => { 
+    res.status(200).json({message: `Get Blog for ${req.params.id}`});
+});
 
-router.route("/").get(getContacts).post(createContact);
+// UPDATE ROUTE
+router.route("/:id",).put((req, res) => {
+    res.status(200).json({message: `Update Blog for ${req.params.id}`});
+});
 
-// router.route("/").post(createContact);
+// DELETE ROUTE
+router.route("/:id",).delete((req, res) => {
+    res.status(200).json({message: `Delete Blog for ${req.params.id}`});
+});
 
-router.route("/":id").get(getContact).put(updateContact).delete(deleteContact);
+// const {
+//     getBlogs,
+//     createBlog,
+//     getBlog,
+//     updateBlog,
+//     deleteBlog,
+// } = require("../controllers/blogController");
 
-// router.route("/":id").put(updateContact);
-
-// router.route("/":id").delete(deleteContact);
 
 module.exports = router;
