@@ -85,3 +85,79 @@ Other hard piece is the Authentication.
 
 
     Calling back data is amazing. Let's see how they make that blog and then add that piece to my own website this will be amazing.
+
+// FRUITS Page
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/forms.css">    
+</head>
+<body>
+    
+    <div class="container">
+        <%- include('./partials/navbar.ejs', {header:'This is the index page'}) %>
+
+        <header>
+            <h1>Social Sync</h1>
+        </header>
+    <ul>
+        <% for (let i = 0; i < 3; i++) { %>
+            <li>
+                <a href="/blogPost/<%= i %>">Blog Post <%= i %></a>
+                <form action="/blogPosts/<%= i %>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE">
+                </form>
+            </li>
+            <li>
+                <a href="/fruits/<%= i %>">Fruit <%= i %></a>
+                <form action="/fruits/<%= i %>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE">
+                </form>
+            </li>
+        <% } %>
+        <%- include('./partials/blogInputs.ejs')%>
+        <%- include('./partials/profilePhoto.ejs')%>
+        <%- include('./partials/profileInputs.ejs')%>
+       <%- include('./partials/blogInputs.ejs')%>
+    </ul>
+    <script src="/js/app.js"></script>
+    <a href="/">Go Back</a>
+</body>
+</html>
+
+i need to get this all done for the editing field of what we need. this doesnt need to be edited or deleted. This is only update.
+That's all we need.
+
+Patch is a better function.
+I will have to seek what the looks like exactly.
+Breakdown each Function.
+
+Why are you talking to me.
+
+Literally finish your code. That is what we have to do. 
+IDK why you don't care about it atm. It's not cool for you to do that. Once they are ready. I need to gather all my intel.
+
+Circle of Tonight - This is the Process. Let's Get it! 
+
+1. Trial and Error
+2. Learning
+3. Documentation
+4. Implementation
+5. Trial and Error
+6. Check for What's Needed Next
+7. Optmize
+8. Back to the Top
+
+I am well equiped and I can finish this tonight! Let's Make sure to get it. And style and get it done TN. Get those styles done ASAP! 
+
+I needed the Visual so I can work through it, this is why it's great!
+
+Looking Good. How do I design it?
+
+That's what I want and then I can add the function now! This is definitely so much fun!
+

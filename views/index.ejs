@@ -3,41 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/forms.css">    
+    <link rel="stylesheet" href="/css/forms.css">
+    <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
+    <h1>Create New Post</h1>  
 </head>
 <body>
-    
-    <div class="container">
-        <%- include('./partials/navbar.ejs', {header:'This is the index page'}) %>
-
-        <header>
-            <h1>Social Sync</h1>
-        </header>
-    <ul>
-        <% for (let i = 0; i < 3; i++) { %>
-            <li>
-                <a href="/blogPost/<%= i %>">Blog Post <%= i %></a>
-                <form action="/blogPosts/<%= i %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE">
-                </form>
-            </li>
-            <li>
-                <a href="/fruits/<%= i %>">Fruit <%= i %></a>
-                <form action="/fruits/<%= i %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE">
-                </form>
-            </li>
-        <% } %>
-        <%- include('./partials/blogInputs.ejs')%>
+ 
+    <form action="/blogPost/" method="POST">
         <%- include('./partials/profilePhoto.ejs')%>
-        <%- include('./partials/profileInputs.ejs')%>
-       <%- include('./partials/blogInputs.ejs')%>
-    </ul>
-    <script src="/js/app.js"></script>
+
+   <%- include('./partials/profileInputs.ejs')%>
+   <%- include('./partials/status.ejs')%>
+    </form>
     <a href="/">Go Back</a>
+    <%- include('./partials/blogInputs.ejs')%>
+    
+    
+  
 </body>
 </html>
-
-

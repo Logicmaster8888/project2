@@ -47,10 +47,14 @@ router.get('/editProfile', (req, res) => { // changed for app to Router
 });
 
 // 404 ERROR
-router.get('/about', (req, res) => { // changed for app to Router
-    res.render("about");
+router.get('/404', (req, res) => { // changed for app to Router
+    res.render("404");
 });
 
+// EDIT LOGIN / LOGOUT  // Function is going to be inside of the page
+router.get('/login', (req, res) => { // changed for app to Router
+    res.render("login");
+});
 
 
 module.exports = router;

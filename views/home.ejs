@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="/css/styles.css"> 
-    <link rel="stylesheet" href="/css/forms.css">   
+    <link rel="stylesheet" href="/css/forms.css">  
+    <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
+    <h1>Create New Post</h1> 
 </head>
 <body>
     
     <div class="container">
-        <%- include('./partials/navbar.ejs', {header:'This is the index page'}) %>
 
         <header>
             <h1>Social Sync</h1>
