@@ -1,0 +1,21 @@
+
+
+1. intiialize project
+2. NPM in intiialize
+3. Pack.json file - name Blog-backend-api
+4. Express Progject for Blog-backend-Api
+5. Entry point Node.json
+6. Author Malvia
+7. Directory in VSCODE
+8. Express Project
+9. .node_modules & .env
+10. npm install Express
+11. nodemon dependency
+12. Express json
+13. start - node server.json
+14. nodemon server.json
+15. npm run dev
+16. create .env file
+17. fetch port from value, code module of .ejs
+18. dotenv installed 
+19. 

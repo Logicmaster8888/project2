@@ -17,15 +17,16 @@ const homeController = require('./controllers/homeController');
 const pokemon = require('./models/pokemon');
 const blogPosts = require('./models/blogPosts');
 const profile = require('./models/profile');
+const dotenv = require("dotenv").config(); // 
 
 // Initialize Express app
-const app = express();
+const app = express(); // Express APP
 
 app.set('view engine', 'ejs');
 // app.set('views', path.join(__dirname, 'views'));
 
 // Set port
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000; // PORT defined as 8000; 
 
 // Middleware
 app.use(morgan('tiny')); // Logging
@@ -44,6 +45,6 @@ app.use(loginController);
 app.use(homeController);
 
 // Start the server
-app.listen(PORT, () => {
-    console.log("Their power level is over", PORT);
+app.listen(PORT, () => { // callback V
+    console.log("Social Media Sync IN SYNC!", PORT); // CALL BACK Console.log
 });
