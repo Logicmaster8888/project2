@@ -35,3 +35,53 @@
 8. Hide all node_modules // .env
 
 9. 
+
+
+// This is a go back button: For the links     <a href="/">Go Back</a>
+// I need to use the Notes.txt more. I need to have a database that holds all of the data compiled into one.
+
+As well 
+
+INDUCES THANK GOD FOR THE FRUITS APP AND CRUD
+
+Authentication / FRUITS APP
+
+MONGO DB Connected // Tested and With CRUD AND INDUCES
+// Live server
+
+// Cite Everything
+// Partials are for everything! 
+
+Check the Routes with the other code and make it so that it works out.
+But this is looking pretty great ngl.
+Once I get it figured out. It will be smooth sailing fromhere.
+
+Other hard piece is the Authentication.
+
+
+// HEROKU
+
+// Design Is LAST!
+
+// SAve Blog Post -> Route Handler for all the buttons
+    // Update Account Info
+
+    This is my CRUD AND INDUCSE Practice!
+
+    This is what I am going to be known for. It's not impossible. Just get it done!
+
+    // Cannot get Login
+
+    // Getting caught up. But this is looking really good with bare bones. 
+    As long as I get the CRUD / INDUCES/ Login SETUP.
+    // And Launch it to the Server with Mongo with that video I am good to go.
+
+    Let's fucking built it out. 
+    Make sure to submit it and cite everything that is required and needed!
+
+    // Routes are looking great. All I need to do is now add the functions. that what controllers are for. Make it as simple as possible. It will allow me to tackle into more of this space. I will make sure to break everything down and fight for my SPOT!
+
+    I appreciate them and I really do Like Justin and Billie The best type of people!
+
+
+    Calling back data is amazing. Let's see how they make that blog and then add that piece to my own website this will be amazing.

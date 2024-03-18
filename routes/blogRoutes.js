@@ -26,9 +26,9 @@ router.get('/blogPost', (req, res) => { // changed for app to Router
     res.render("blogPost");
 });
 
-// EDIT BLOG POST // Function is going to be inside of the page
-router.get('/about', (req, res) => { // changed for app to Router
-    res.render("about");
+// EDIT BLOG POSTS // Function is going to be inside of the page
+router.get('/editPosts', (req, res) => { // changed for app to Router
+    res.render("editPosts");
 });
 
 // NEW POST
