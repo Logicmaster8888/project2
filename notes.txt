@@ -19,3 +19,19 @@
 17. fetch port from value, code module of .ejs
 18. dotenv installed 
 19. 
+
+// Fruits to be Cited
+
+
+1. Download node 
+2. npm init -y
+
+3. npm i connect-mongo cookie-parser bcrypt dotenv ejs express express-ejs-layouts express-session jsonwebtoken method-override mongoose
+4. npm i nodemon --save-dev
+5. run nodemon server.js
+
+6. Add node_modules
+7. .env 
+8. Hide all node_modules // .env
+
+9. 

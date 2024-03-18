@@ -12,6 +12,7 @@ const getBlogs = (req, res) => {
 //@access public
 // Not Logical
 const createBlog = (req, res) => {
+    console
     res.status(201).json({ message: `Create Blog`});
 };
 
