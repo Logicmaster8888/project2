@@ -7,7 +7,7 @@ const {
         getBlog,
         updateBlog,
         deleteBlog,
-    } = require("../controllers/blog1Controller");
+    } = require('../controllers/blog1Controller');
 
 // @desc Delete Blog
 // @AbortController
@@ -17,29 +17,19 @@ const {
 // });
 
 // GET ROUTE
-router.route("/").get((req, res) => {
-    res.status(200).json({message: `Get all Blogs`});
-});
+router.route("/").get(getBlogs);
 
 // POST ROUTE
-router.route("/").post((req, res) => {
-    res.status(200).json({message: `Create Blog`});
-});
+router.route("/").post(createBlog);
 
 // CREATE ROUTE
-router.route("/:id").get((req, res) => { 
-    res.status(200).json({message: `Get Blog for ${req.params.id}`});
-});
+router.route("/:id").get(getBlog);
 
 // UPDATE ROUTE
-router.route("/:id",).put((req, res) => {
-    res.status(200).json({message: `Update Blog for ${req.params.id}`});
-});
+router.route("/:id",).put(updateBlog);
 
 // DELETE ROUTE
-router.route("/:id",).delete((req, res) => {
-    res.status(200).json({message: `Delete Blog for ${req.params.id}`});
-});
+router.route("/:id",).delete(deleteBlog);
 
 // const {
 //     getBlogs,
