@@ -46,3 +46,9 @@
 *    Availability: https://git.generalassemb.ly/SEIR-Pixel-Pandas/fruits
 *
 ***************************************************************************************/
+// UPDATES BLOG
+const updateBlog = (req, res) => {
+    const blog = allBlogs.find(blog => req.params.index === blog.id);
+    const changes = req.body;
+    
+}

@@ -5,12 +5,12 @@ const express = require('express'); // Fruits
 const app = express(); // Express APP Good to Go!
 
 
-
 // SERVER ROUTES
 app.use('/', require('./routes/blogRoutes'));
 const blogPost = require('./models/blogPosts');
 
 // const db = require('./models') // Fruits
+
 
 // Set port
 const PORT = process.env.PORT || 9000; // PORT defined as 9000; Fruits 
@@ -18,21 +18,27 @@ const methodOverride = require('method-override'); // Fruits
 const morgan = require('morgan'); // Fruits
 // const session = require('express-session');
 
-
-// Import controllers
-// const fruitsController = require('./controllers/fruitsController');
-// const pokemonController = require('./controllers/pokemonController');
-// const blogPostsController = require('./controllers/blogPostsController');
-// const editProfileController = require('./controllers/editProfileController');
-// const profileController = require('./controllers/profileController');
+const db = require(',/models');
+// --------------------------------------------------------------
+// Import controllers // GOOD
+// const blogController = require('./controllers/blog');
+// const isAuthenticatedController = require('./controllers/isAuthenticatedController');
 // const loginController = require('./controllers/loginController');
-// const homeController = require('./controllers/homeController');
+// const profileController = require('./controllers/profile');
+// const sessionController = require('./controllers/sessionController');
+// const userController = require('./controllers/userController');
 
-// Import models
-// const fruits = require('./models/fruits');
-// const pokemon = require('./models/pokemon');
+// app.use('/blog', blog');
+// app.use('/profile', profile');
+// app.use('/sessions', sessionsController'); // Handles login and logout
+
+// -------------------------------------------------------------
+// Import models // GOOD 
 // const blogPosts = require('./models/blogPosts');
+// const index = require('./models/index');
+// const login = require('./models/login');
 // const profile = require('./models/profile');
+// const user = require('./models/user');
 // const mongoose = require('mongoose'); // DATABASE TO MONGODB CONNECTION 
 // Initialize Express app
 
@@ -90,13 +96,10 @@ app.use(methodOverride('_method')); // Method override // Fruits
 // app.use(connectLiveReload()); 
 
 // Routes
-// app.use(fruitsController); // Fruits routes
-// app.use(pokemonController); // Pokemon routes
-// app.use(blogPostsController);
-// app.use(editProfileController);
-// app.use(profileController);
-// app.use(loginController);
-// app.use(homeController);
+// app.use(blog); // Blog Manager
+// app.use(profile); // Profile Manager
+// app.use(loginController); // Login Manager
+// app.use(homeController); // Index Manager?
 
 
 const blogRouter = require('./routes/blogRoutes');
