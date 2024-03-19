@@ -95,6 +95,13 @@ Accomplishments:
 -Controllers: Created controllers to handle various routes and logic within your application, improving code organization and maintainability.
 -Dependencies: Added necessary dependencies to your project, ensuring smooth functionality and access to essential libraries.
 -Identical Form Fields for the myspace functionality
+-Deploying on Heroku
+-Building out a Strong CSS and containerization
+-Functions of INDUCSE & the Params.id
+-Building out the connecting links that add and subtract from each other
+-the Different project management tools such as trello and figma
+-Building out the codification from memory and muscle memory more than anything else.
+
 
 -Suggestions for Further Improvement:
 
@@ -418,3 +425,9 @@ GitHub:
 
 Website: GitHub
 Description: GitHub is a platform for hosting and collaborating on code repositories. You can find open-source projects, sample applications, and code snippets related to Express.js, MongoDB, and other technologies. Explore repositories and contribute to projects to learn and improve your skills.
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// Source: YouTube
+URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+

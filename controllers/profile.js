@@ -2,26 +2,68 @@ const express = require('express');
 const router = express.Router();
 // const Profile = require('../models/profile');
 
-router.post('blog/updateStatus', async (req, res) => {
-    const { userId, status } = req.body;
-  
-    try {
-      // Find the user document in the database by userId
-      let user = await User.findById(userId);
-  
-      // Update the status field
-      user.status = status;
-  
-      // Save the updated user document
-      user = await user.save();
-  
-      res.status(200).json({ message: 'Status updated successfully', user });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Server Error' });
-    }
-  });
-  
+app.post('/updateStatus', async (req, res) => {
+  try {
+      // Create a new status document
+      const newStatus = new Status({
+          // Assuming 'status' is a field in your form
+          status: req.body.status
+      });
+      // Save the status to the database
+      await newStatus.save();
+      res.render('status_success'); // Render success page
+  } catch (error) {
+      res.render('error', { error: error.message }); // Render error page with error message
+  }
+});
+// Form Data To Mongodb Review - Line 1-323 
+      // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+      // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+      // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+    // Date 3/3-19
+//       Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+      
+//       Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+// // Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// Source: YouTube
+URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+// Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: EJS Partials on GitHub
+// Title: CRUD with Mongosh
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: REST APIs and CRUD on GitHub
+// Title: Authentication
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+
+
   router.post('/updateUserInfo', async (req, res) => {
     const { userId, name, location, lastUpdate } = req.body;
   
@@ -44,6 +86,42 @@ router.post('blog/updateStatus', async (req, res) => {
     }
   });
 
+
+  // Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+  // Date: 3/24
+  // Code Version: Latest 3/18
+  // Availability: EJS Partials on GitHub
+  // Title: CRUD with Mongosh
+  // https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+  
+  // Authors: Justin White, Andrew DeitrickBillie Heidelberg
+  // Date: 3/24
+  // Code Version: Latest 3/18
+  // Availability: CRUD with Mongosh on GitHub
+  // Title: REST APIs and CRUD
+  // https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+  
+  // Authors: Justin White, Andrew Deitrick Billie Heidelberg
+  // Date: 3/24
+  // Code Version: Latest 3/18
+  // Availability: REST APIs and CRUD on GitHub
+  // Title: Authentication
+  // https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+// Form Data To Mongodb Review
+      // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+      // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+      // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+
+// Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// Source: YouTube
+URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+
+
   router.post('/updateBasicInfo', async (req, res) => {
     const { userId, gender, birthday, hometown } = req.body;
   
@@ -62,8 +140,135 @@ router.post('blog/updateStatus', async (req, res) => {
       res.status(500).json({ message: 'Server Error' });
     }
   });
-    
+  // Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// Source: YouTube
+URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
   
+// Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: EJS Partials on GitHub
+// Title: CRUD with Mongosh
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: REST APIs and CRUD on GitHub
+// Title: Authentication
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+// // Form Data To Mongodb Review
+      // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+      // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+      // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+// Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// // Author: The Net Ninja
+// // Source: YouTube
+// URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+// Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: EJS Partials on GitHub
+// Title: CRUD with Mongosh
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: REST APIs and CRUD on GitHub
+// Title: Authentication
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+
+
+  app.post('/editProfile/updateProfile', async (req, res) => {
+    try {
+        // Create or update the profile document
+        // Assuming you have a profile model and 'profileInputs' correspond to its fields
+        const updatedProfile = await Profile.findOneAndUpdate({}, req.body, { new: true, upsert: true });
+        res.render('profile_success'); // Render success page
+    } catch (error) {
+        res.render('error', { error: error.message }); // Render error page with error message
+    }
+});
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// Source: YouTube
+URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+
+
+// Form Data To Mongodb Review
+      // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+      // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+      // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+
+// Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+app.post('/blogPost/', async (req, res) => {
+  try {
+      // Create a new blog post document
+      // Assuming you have a blog post model and 'blogInputs' correspond to its fields
+      const newBlogPost = new BlogPost(req.body);
+      await newBlogPost.save();
+      res.render('blog_success'); // Render success page
+  } catch (error) {
+      res.render('error', { error: error.message }); // Render error page with error message
+  }
+});
+// Form Data To Mongodb Review
+      // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+      // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+      // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+
+// Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// Source: YouTube
+URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+// Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: EJS Partials on GitHub
+// Title: CRUD with Mongosh
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: REST APIs and CRUD on GitHub
+// Title: Authentication
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
 
 
     router.post('/updateBasicInfo', async (req, res) => {
@@ -84,6 +289,20 @@ router.post('blog/updateStatus', async (req, res) => {
           res.status(500).json({ message: 'Server Error' });
         }
       });
+
+      // Form Data To Mongodb Review
+      // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+      // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+      // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+
+      // Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// Source: YouTube
+URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+
 
       router.post('/updateBasicInfo', async (req, res) => {
         const { userId, email, instagram, mobile, address, website } = req.body;
@@ -106,6 +325,39 @@ router.post('blog/updateStatus', async (req, res) => {
         }
       });
 
+      // Form Data To Mongodb Review
+      // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+      // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+      // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+
+// Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// Source: YouTube
+// URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+// Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: EJS Partials on GitHub
+// Title: CRUD with Mongosh
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: REST APIs and CRUD on GitHub
+// Title: Authentication
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
       router.post('/updateBasicInfo', async (req, res) => {
         const { userId, college, highschool } = req.body;
       
@@ -124,7 +376,49 @@ router.post('blog/updateStatus', async (req, res) => {
         }
       });
 
-      router.post('/updatePost', async (req, res) => {
+      // Form Data To Mongodb Review
+      // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+      // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+      // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+
+// Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+    
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// // Source: YouTube
+// URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+// Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: EJS Partials on GitHub
+// Title: CRUD with Mongosh
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: REST APIs and CRUD on GitHub
+// Title: Authentication
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+
+
+router.post('/updatePost', async (req, res) => {
         const { postId, postTitle, postContent, postImage, postDate } = req.body;
       
         try {
@@ -143,8 +437,93 @@ router.post('blog/updateStatus', async (req, res) => {
           res.status(500).json({ message: 'Server Error' });
         }
       });
-// // // PROFILE
-// // router.get('/profile', (req , res) => {
+
+//       // Form Data To Mongodb Review
+//       // OpenAI. (n.d.). How to Build a Website with Node.js and Express [Video file]. 
+//       // Retrieved from https://www.youtube.com/watch?v=4sTmSlZDGow
+//       // https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFlHSDBSSnJSU0hiZTd0MENFZUFwX1oxVzc5QXxBQ3Jtc0ttWnpPNnpRZWhfX2pEbUFmNkhpYWdINklsSFBPV3ZqN3VUVUJvTGJVNVhHNS1sd3ZXMkZaRWxJc2JOME8tM2J2YW5BdWhNVExjSnQyUkdRVjRJTFlBaFRhUjJhaW9BVHlzT2ZyY0tMWG9xb3gyNFAwWQ&q=https%3A%2F%2Fopenjavascript.info%2F2023%2F03%2F13%2Freceive-form-data-in-node-js-with-and-without-files%2F&v=4sTmSlZDGow
+// // Source: Xano. (n.d.). Xano - The No Code Backend Platform. Retrieved from https://www.xano.com
+
+// Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: EJS Partials on GitHub
+// Title: CRUD with Mongosh
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: REST APIs and CRUD on GitHub
+// Title: Authentication
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+// // Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// // Author: The Net Ninja
+// // Source: YouTube
+// URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+
+router.post('/updateAccountInfo', async (req, res) => {
+  const { accountName, location, lastUpdate } = req.body;
+
+  try {
+      // Assuming you have a logged-in user and their ID is available in req.user
+      const userId = req.user.id;
+
+      // Update the user's account information in the database
+      await User.findByIdAndUpdate(userId, { accountName, location, lastUpdate });
+
+      res.send('Account information updated successfully.');
+  } catch (error) {
+      console.error('Error updating account information:', error);
+      res.status(500).send('Internal server error.');
+  }
+});
+
+// Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: EJS Partials on GitHub
+// Title: CRUD with Mongosh
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: REST APIs and CRUD on GitHub
+// Title: Authentication
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+
+// Title: REST API Tutorial (Node, Express & Mongo) #8 - PUT & DELETE Requests
+// Author: The Net Ninja
+// // Source: YouTube
+// URL: https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+
+
+// Authors: Justin White, Andrew DeitrickBillie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: CRUD with Mongosh on GitHub
+// Title: REST APIs and CRUD
+// https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+// // // // PROFILE
+// // // router.get('/profile', (req , res) => {
 // //     res.render('profile', { blogPosts });
 // // });
 
