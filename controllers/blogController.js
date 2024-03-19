@@ -1,7 +1,7 @@
 /* Require modules */
 const express = require("express");
 const router = express.Router();
-const db = require("../models");
+const blogPost = require("../models/blogSeed");
 
 // // INDEX - see all blog posts
 router.get("/blogposts", (req, res) => {
@@ -53,3 +53,14 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
+
+// CITATION 
+/***************************************************************************************
+*    Title: SEIR-Pixel-Pandas/Fruits
+*    Author: Billie Heidelberg, Justin White
+*    Date: 3-16/ 3-18/24
+*    Code version: Latest 3/18
+*    Availability: https://git.generalassemb.ly/SEIR-Pixel-Pandas/fruits
+*
+***************************************************************************************/
+// UPDATES BLOG

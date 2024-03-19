@@ -1,4 +1,7 @@
-const blogsData = [
+
+const express = require('express');
+const router = express.Router();
+const blogPost = [
     {
       title: 'The Benefits of Regular Exercise',
       content: 'Regular exercise has numerous benefits for both physical and mental health. It helps improve cardiovascular health, strengthen muscles, and boost mood. Incorporating exercise into your daily routine can lead to a healthier and happier life.',
@@ -31,7 +34,8 @@ const blogsData = [
     },
   ];
 
-  module.exports = blogsData;
+  module.exports = blogPost;
+
 
   // CITATION 
 /***************************************************************************************

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-// const blog = require('../controllers/blog'); // CONTROLLER
-
+const blogs = require('../models/blogSeed'); // CONTROLLER
+const blogController = require('../controllers/blogController');
 // router.get('', (req, res) => { // changed for app to Router
 //     res.send("Hello World");
 // });
@@ -30,7 +30,10 @@ router.get('/editBlogs', (req, res) =>{
 // router.get('/allBlogs', (req, res) =>{
 //     res.render('allBlogs');
 // })
- 
+router.get('/blogs', (req, res) => {
+    res.render('blogs', { blogs: blogs });
+});
+
 router.get('/blogs', (req, res) => {
         res.render('blogs', { blogs: blogs });
     });
@@ -52,7 +55,7 @@ updateBlog,
 createBlog,
 editBlog,
 showBlog,
- } = require ("../controllers/blog");
+ } = require ("../controllers/blogController");
 
 module.exports = router;
 

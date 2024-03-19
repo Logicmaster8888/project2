@@ -73,6 +73,10 @@ app.set('view engine', 'ejs'); // Fruits
 app.set('views', path.join(__dirname, 'views')); // Fruits
 // app.use(bodyParser.json()); // Fruits
 
+app.get('/blogs', (req, res) => {
+    res.json(blogs); 
+  });
+ 
 
 // app.use(session({
 //     secret: 'my secret key',
