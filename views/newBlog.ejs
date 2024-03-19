@@ -10,20 +10,18 @@
     <h1>Create New Post</h1>
 </head>
 <body>
- <%- include('./partials/status.ejs')%>
-        <form action="/updateStatus" method="POST">
-            <label for="status">Status:</label>
-            <input type="text" id="status" name="status" required>
-            <button type="submit">Update Status</button>
-          </form>
+    <!-- Status Form -->
+    <form action="/updateStatus" method="POST">
+        <%- include('./partials/status.ejs')%>
+        <button type="submit">Update Status</button>
+    </form>
 
+    <!-- Blog Post Form -->
     <form action="/blogPost/" method="POST">
         <%- include('./partials/blogInputs.ejs')%>
-
+        <button type="submit">Submit Blog Post</button>
     </form>
+
     <a href="/">Go Back</a>
-    
-    
-  
 </body>
 </html>

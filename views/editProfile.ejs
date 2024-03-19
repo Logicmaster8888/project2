@@ -11,29 +11,43 @@
 </head>
 <body>
     <%- include('./partials/profilePhoto.ejs')%>
-    <form action="/editProfile/" method="POST">
+
+    <!-- Status Form -->
+    <form action="/editProfile/updateStatus" method="POST">
         <%- include('./partials/status.ejs')%>
-
-    <%- include('./partials/profileInputs.ejs')%>
-    <form action="/editProfile/accountInfo" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <button type="submit">Update Account Info</button>
-      </form>
-
+        <button type="submit">Update Status</button>
     </form>
 
+    <!-- Basic Info Form -->
+    <form action="/editProfile/updateBasicInfo" method="POST">
+        <%- include('./partials/basicInfoInputs.ejs')%>
+        <button type="submit">Update Basic Info</button>
+    </form>
+
+    <!-- Contact Info Form -->
+    <form action="/editProfile/updateContactInfo" method="POST">
+        <%- include('./partials/contactInfoInputs.ejs')%>
+        <button type="submit">Update Contact Info</button>
+    </form>
+
+    <!-- Education Info Form -->
+    <form action="/editProfile/updateEducationInfo" method="POST">
+        <%- include('./partials/educationInfoInputs.ejs')%>
+        <button type="submit">Update Education Info</button>
+    </form>
+
+    <!-- Account Info Form -->
+    <form action="/editProfile/updateAccountInfo" method="POST">
+        <%- include('./partials/accountInfoInputs.ejs')%>
+        <button type="submit">Update Account Info</button>
+    </form>
+
+    <!-- Blog Post Form -->
     <form action="/blogPost/" method="POST">
         <%- include('./partials/blogInputs.ejs')%>
-
+        <button type="submit">Submit Blog Post</button>
     </form>
+
     <a href="/">Go Back</a>
    
 </body>

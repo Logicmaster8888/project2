@@ -4,6 +4,9 @@ const path = require('path'); // Fruits
 const express = require('express'); // Fruits
 const app = express(); // Express APP Good to Go!
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+
 
 // SERVER ROUTES
 // app.use('/', require('./routes/blogRoutes'));
@@ -96,6 +99,13 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data // Fr
 app.use(methodOverride('_method')); // Method override // Fruits
 // app.use(connectLiveReload()); 
 
+app.use('/blog/user', require('./routes/userRoutes'));
+app.use('.blog/profile', require('/routes/profile'));
+app.use('/blog/blogPosts', require('/routes/blogPosts'));
+app.use('/blog/index', require('/routes/index'));
+app.use('/blog/login', require('/routes/login'));
+app.use('/blog/profileSeed', require('/routes/profileSeed'));
+app.use('/blog/blogSeed', require('/routes/blogSeed'));
 
 app.use('/', require('./routes/blogRoutes'));
 // Routes

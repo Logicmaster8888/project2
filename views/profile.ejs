@@ -6,13 +6,11 @@
     <title>Your Account</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/forms.css">  
-  
 </head>
 <body>
     <div class="container custom">
+        <!-- Login Form -->
         <form action="/login" method="POST" class="login-form custom">
-            
-            
             <h2>Login</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter username">
@@ -21,14 +19,25 @@
             <button type="submit">Login</button>
         </form>
     </div>
+    
+    <!-- Navbar -->
     <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
+
     <h1>Your Account</h1>
-    <form action="/blogPost/" method="POST">
+
+    <!-- Profile Form -->
+    <form action="/editProfile/updateProfile" method="POST">
         <%- include('./partials/profilePhoto.ejs')%>
         <%- include('./partials/profileInputs.ejs')%>
-       <%- include('./partials/blogInputs.ejs')%>
+        <button type="submit">Update Profile</button>
     </form>
+
+    <!-- Blog Post Form -->
+    <form action="/blogPost/" method="POST">
+        <%- include('./partials/blogInputs.ejs')%>
+        <button type="submit">Submit Blog Post</button>
+    </form>
+
     <a href="/">Go Back</a>
 </body>
 </html>
-

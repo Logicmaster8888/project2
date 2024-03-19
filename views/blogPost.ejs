@@ -1,15 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/forms.css">  
+    <link rel="stylesheet" href="/css/forms.css">
     <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
-    <h1>Blog Posts</h1>
+    <h1>Home</h1>  
 </head>
-<%- include('./partials/blogInputs.ejs')%>
+<body>
+    <!-- Status Form -->
+    <form action="/updateStatus" method="POST">
+        <%- include('./partials/status.ejs')%>
+        <button type="submit">Update Status</button>
+    </form>
 
-<a href="/">Go Back</a>
+    <!-- Profile Form -->
+    <form action="/editProfile/updateProfile" method="POST">
+        <%- include('./partials/profilePhoto.ejs')%>
+        <%- include('./partials/profileInputs.ejs')%>
+        <button type="submit">Update Profile</button>
+    </form>
+
+    <!-- Blog Post Form -->
+    <form action="/blogPost/" method="POST">
+        <%- include('./partials/blogInputs.ejs')%>
+        <button type="submit">Submit Blog Post</button>
+    </form>
+
+    <a href="/">Go Back</a>  
+</body>
+</html>
