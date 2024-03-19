@@ -6,31 +6,32 @@
     <title>Home</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/forms.css">
+    <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
 </head>
 <body>
     <!-- Navbar -->
     <% include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
     <h1>All Blogs</h1>
-    <ul>
-      <% blogs.forEach(blog => { %>
-        <li>
-          <li>
-            <h2><%= blog.title %></h2>
-            <p><%= blog.content %></p>
-            <p>Author: <%= blog.author %></p>
-            <p>Date: <%= blog.date.toDateString() %></p>
-        </li>
-        </li>
-      <% }); %>
-    </ul>
+    <div class="blogs-container">
+        <ul>
+            <% blogs.forEach(blog => { %>
+            <li>
+                <h2><%= blog.title %></h2>
+                <p><%= blog.content %></p>
+                <p>Author: <%= blog.author %></p>
+                <p>Date: <%= blog.date.toDateString() %></p>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
     <form action="/blogs" method="POST">
         <% include('./partials/profilePhoto.ejs') %>
         <% include('./partials/status.ejs') %>
 
         <% include('./partials/profileInputs.ejs') %>
         <% include('./partials/blogInputs.ejs') %>
-
-        <button type="submit">Create Blog Post</button>
+      
+        <button><a href="/newBlog">Create Blog Post</a>></button>
     </form>
 
     <a href="/">Go Back</a>
