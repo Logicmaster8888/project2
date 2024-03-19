@@ -53,7 +53,7 @@ updateBlog,
 createBlog,
 editBlog,
 showBlog,
- } = require ("../controllers/blog");
+ } = require ("../controllers/blog1");
 
 module.exports = router;
 

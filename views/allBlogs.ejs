@@ -3,45 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
-</head>
-<body>
-    <h1>Blog Posts</h1>
-    <ul>
-        <% blogPosts.forEach(post => { %>
-            <li>
-                <% include ./partials/postHeader.ejs %>
-                
-                <% include ./partials/postBody.ejs %>
-            </li>
-        <% }); %>
-    </ul>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/forms.css">
-    <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
-    <h1>Home</h1>  
 </head>
 <body>
- 
-    <form action="/blogPost/" method="POST">
-        <%- include('./partials/profilePhoto.ejs')%>
-        <%- include('./partials/status.ejs')%>
+    <!-- Navbar -->
+    <% include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
 
-   <%- include('./partials/profileInputs.ejs')%>
-   <%- include('./partials/blogInputs.ejs')%>
+    <h1>Home</h1>  
 
+    <!-- Form to create a new blog post -->
+    <form action="/blogPosts" method="POST">
+        <!-- Include partials for profile photo and status -->
+        <% include('./partials/profilePhoto.ejs') %>
+        <% include('./partials/status.ejs') %>
+
+        <!-- Include partials for profile inputs and blog inputs -->
+        <% include('./partials/profileInputs.ejs') %>
+        <% include('./partials/blogInputs.ejs') %>
+
+        <button type="submit">Create Blog Post</button>
     </form>
-    <a href="/">Go Back</a>
 
-    
-  
+    <!-- Link to go back to the home page -->
+    <a href="/">Go Back</a>
 </body>
 </html>

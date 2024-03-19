@@ -1,7 +1,7 @@
 const express = require('express');
-const router = express.Router();
+// const router = express.Router();
 
-const blogPosts = require('../models/blogPosts')
+// const blogPosts = require('../models/blogPosts')
 // const blogRoutes = require('./blogRoutes');
 // const userRoutes = require('./userRoutes');
 // Add other router imports as needed
