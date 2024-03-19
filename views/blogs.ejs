@@ -12,7 +12,7 @@
     <% include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
     <h1>All Blogs</h1>
     <ul>
-      <% blogsData.forEach(blog => { %>
+      <% blogs.forEach(blog => { %>
         <li>
           <li>
             <h2><%= blog.title %></h2>
