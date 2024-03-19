@@ -1,7 +1,7 @@
 // Import required modules
-const dotenv = require("dotenv").config(); // 
-const path = require('path');
-const express = require('express');
+const dotenv = require("dotenv").config(); // Fruits
+const path = require('path'); // Fruits
+const express = require('express'); // Fruits
 const app = express(); // Express APP Good to Go!
 
 
@@ -9,11 +9,12 @@ const app = express(); // Express APP Good to Go!
 // SERVER ROUTES
 app.use('/', require('./routes/blogRoutes'));
 
+const db = require('./models') // Fruits
 
 // Set port
-const PORT = process.env.PORT || 9000; // PORT defined as 8000; 
-const methodOverride = require('method-override');
-const morgan = require('morgan');
+const PORT = process.env.PORT || 9000; // PORT defined as 9000; Fruits 
+const methodOverride = require('method-override'); // Fruits
+const morgan = require('morgan'); // Fruits
 // const session = require('express-session');
 
 
@@ -60,8 +61,8 @@ const morgan = require('morgan');
 // //  Configure the app (app.set)
 // --------------------------------------------------------------------------
 // VIEWS ENGINE
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs'); // Fruits
+app.set('views', path.join(__dirname, 'views')); // Fruits
 
 
 // app.use(session({
@@ -80,11 +81,12 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 // Middleware
-app.use(morgan('tiny')); // Logging
-app.use(express.static('public')); // Serve static files
-app.use(express.json()); // Parse JSON requests
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data
-app.use(methodOverride('_method')); // Method override
+app.use(morgan('tiny')); // Logging // Fruits
+app.use(express.static('public')); // Serve static files // Fruits
+app.use(express.json()); // Parse JSON requests  // Fruits
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data // Fruit
+app.use(methodOverride('_method')); // Method override // Fruits
+// app.use(connectLiveReload()); 
 
 // Routes
 // app.use(fruitsController); // Fruits routes
@@ -109,7 +111,7 @@ app.use(methodOverride('_method')); // Method override
 // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {
     res.render('404')
-});
+}); // Fruits
 
 // Start the server
 app.listen(PORT, () => { // callback V

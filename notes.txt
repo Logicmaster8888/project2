@@ -258,3 +258,9 @@ POST // saveBlogPost
 
  I will be caught up with everything and make sure it works out.
 
+
+Get it for Profile & Blogs
+Have it with the database
+
+And that is what I need to build and then carry on that way.
+
