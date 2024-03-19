@@ -252,3 +252,9 @@ POST // updateContactInfo
 POST // updateEducationInfo
 
 POST // saveBlogPost
+
+ hit them in the Partials that is what we have to edit. This will be a great app. I already know it.
+ I need to make sure the authentication works out.
+
+ I will be caught up with everything and make sure it works out.
+
