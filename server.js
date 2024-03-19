@@ -3,14 +3,15 @@ const dotenv = require("dotenv").config(); // Fruits
 const path = require('path'); // Fruits
 const express = require('express'); // Fruits
 const app = express(); // Express APP Good to Go!
-
+const bodyParser = require('body-parser');
 
 // SERVER ROUTES
-app.use('/', require('./routes/blogRoutes'));
-const blogPost = require('./models/blogPosts');
+// app.use('/', require('./routes/blogRoutes'));
+// const blogPost = require('./models/blogPosts');
 
 // const db = require('./models') // Fruits
 
+// const blogRoutes = require('./routers/blogRoutes');
 
 // Set port
 const PORT = process.env.PORT || 9000; // PORT defined as 9000; Fruits 
@@ -18,7 +19,7 @@ const methodOverride = require('method-override'); // Fruits
 const morgan = require('morgan'); // Fruits
 // const session = require('express-session');
 
-const db = require(',/models');
+// const db = require(',/models');
 // --------------------------------------------------------------
 // Import controllers // GOOD
 // const blogController = require('./controllers/blog');
@@ -70,7 +71,7 @@ const db = require(',/models');
 // VIEWS ENGINE
 app.set('view engine', 'ejs'); // Fruits
 app.set('views', path.join(__dirname, 'views')); // Fruits
-
+app.use(bodyParser.json()); // Fruits
 
 // app.use(session({
 //     secret: 'my secret key',
@@ -95,15 +96,20 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data // Fr
 app.use(methodOverride('_method')); // Method override // Fruits
 // app.use(connectLiveReload()); 
 
+
+app.use('/', require('./routes/blogRoutes'));
 // Routes
 // app.use(blog); // Blog Manager
 // app.use(profile); // Profile Manager
 // app.use(loginController); // Login Manager
 // app.use(homeController); // Index Manager?
 
+// app.use('/blog', blogRoutes);
+// app.use("/blogPosts", require("./routes/blogRoutes"));
+// app.use("/blog", require(".routes/blogRoutes"));
 
-const blogRouter = require('./routes/blogRoutes');
-app.use('/blogRoutes', blogRouter);
+// const blogRouter = require('./routes/blogRoutes');
+// app.use('/blogRoutes', blogRouter);
 
 // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {

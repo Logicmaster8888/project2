@@ -1,24 +1,24 @@
-const allBlogs = require('../models/blogs');
-const path = require('path');
+// const allBlogs = require('../models/blogs');
+// const path = require('path');
 
-const allBlogs = (req, res) => {
-    res.render('index', { allBlogs });
-};
+// const getAllBlogs = (req, res) => {
+//     res.render('index', { allBlogs });
+// };
 
-// renders the new page
-const newBlogs = (req, res) => {
-    res.render('newBlogs');
-};
+// // renders the new page
+// const newBlogs = (req, res) => {
+//     res.render('newBlogs');
+// };
 
-// DELETE BLOG
-const deleteBlog = (req, res) => {
-    const blogIndex = allBlogs.findIndex {
-        blog => req.params.index === blog.id
-    );
-    allBlogs.splice(blogIndex, 1);
-    allBlogs.sort((a, b) => parseInt(a.id) - parseInt(b.id));
-    res.redirect('/allBlogs');
-};
+// // DELETE BLOG
+// const deleteBlog = (req, res) => {
+//     const blogIndex = allBlogs.findIndex {
+//         blog => req.params.index === blog.id
+//     );
+//     allBlogs.splice(blogIndex, 1);
+//     allBlogs.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+//     res.redirect('/allBlogs');
+// };
 
 
 
@@ -34,16 +34,16 @@ const deleteBlog = (req, res) => {
 
 // CHECKS PARAMETER IS VALID 
 
-module.exports = {
-    getAllBlogs,
-    newBlog,
-    deleteBlog,
-    updateBlog,
-    createBlog,
-    editBlog,
-    showBlog,
-    checkIfValidParam,
-};
+// module.exports = {
+//     getAllBlogs,
+//     newBlog,
+//     deleteBlog,
+//     updateBlog,
+//     createBlog,
+//     editBlog,
+//     showBlog,
+//     checkIfValidParam,
+// };
 
 // const Blog = require('../models/blogPosts');
 

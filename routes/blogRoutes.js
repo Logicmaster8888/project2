@@ -1,30 +1,53 @@
 const express = require('express');
 const router = express.Router();
-const blog = require('../controllers/blog'); // CONTROLLER
+// const blog = require('../controllers/blog'); // CONTROLLER
 
+// router.get('', (req, res) => { // changed for app to Router
+//     res.send("Hello World");
+// });
+// router.param('index', blog.checkIfValidParam);
 
-router.param('index', blog.checkIfValidParam);
+router.get('/', (req, res) =>{
+    res.render('index');
+})
 
-// INDEX PAGE
-router.get('/', blog.getAllBlogs);
+router.get('/newPost', (req, res) =>{
+    res.render('newPost');
+})
 
-// NEW PAGE
-router.get('/new', blog.newBlog);
+router.get('/editProfile', (req, res) =>{
+    res.render('editProfile');
+})
+router.get('/profile', (req, res) =>{
+    res.render('profile');
+})
 
-// DELETE PAGE
-router.delete('/:id', blog.deleteBlog)
+router.get('/editPosts', (req, res) =>{
+    res.render('editPosts');
+})
 
-// UPDATE PAGE
-router.patch('/:id', blog.updateBlog);
+router.get('/blogPost', (req, res) =>{
+    res.render('blogPost');
+})
 
-// CREATE ROUTE
-router.post('/', blog.createBlog);
-
-// EDIT ROUTE
-router.get('/:id/edit', blog.editBlog);
+router.get('/login', (req, res) =>{
+    res.render('login');
+})
 
 // SHOW PAGE
-router.get('/:id', blog.showBlog);
+router.get('/404', (req, res) =>{
+    res.render('404');
+})
+
+const {
+getAllBlogs,
+newBlog,
+deleteBlog,
+updateBlog,
+createBlog,
+editBlog,
+showBlog,
+ } = require ("../controllers/blog");
 
 module.exports = router;
 
