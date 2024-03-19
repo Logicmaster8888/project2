@@ -25,7 +25,7 @@ router.get('/new', (req, res) => {
     // CITATION 
 /***************************************************************************************
 *    Title: SEIR-Pixel-Pandas/Fruits
-*    Author: Billie Heidelberg, Justin White
+*    Author: Billie Heidelberg, Justin White Andrew Dietrick
 *    Date: 3-16/ 3-18/24
 *    Code version: Latest 3/18
 *    Availability: https://git.generalassemb.ly/SEIR-Pixel-Pandas/fruits

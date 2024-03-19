@@ -10,8 +10,8 @@ module.exports = isAuthenticated;
 
 // CITATION 
 /***************************************************************************************
-*    Title: SEIR-Pixel-Pandas/Fruits
-*    Author: Billie Heidelberg, Justin White
+*    Title: SEIR-Pixel-Pandas/Fruits - 1-9
+*    Author: Billie Heidelberg, Justin White, Andrew Deitrick
 *    Date: 3-16/ 3-18/24
 *    Code version: Latest 3/18
 *    Availability: https://git.generalassemb.ly/SEIR-Pixel-Pandas/fruits

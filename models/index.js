@@ -20,10 +20,18 @@ db.on('connected', function () {
 
 // CITATION 
 /***************************************************************************************
-*    Title: SEIR-Pixel-Pandas/Fruits
-*    Author: Billie Heidelberg, Justin White
+*    Title: SEIR-Pixel-Pandas/Fruits - 1-12
+*    Author: Billie Heidelberg, Justin White, Andrew Dietrick 
 *    Date: 3-16/ 3-18/24
 *    Code version: Latest 3/18
 *    Availability: https://git.generalassemb.ly/SEIR-Pixel-Pandas/fruits
 *
 ***************************************************************************************/
+    // Title: Authentication
+
+// Authors: Justin White, Andrew Deitrick Billie Heidelberg
+// Date: 3/24
+// Code Version: Latest 3/18
+// Availability: Authentication on GitHub
+
+// *****************************************

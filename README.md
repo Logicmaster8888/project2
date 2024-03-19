@@ -86,6 +86,58 @@ Project Overview:
 
 Develop a simplified version of MySpace, a social networking platform, using modern web development technologies such as Node.js, Express, MongoDB, HTML, and CSS. The application will support CRUD operations for user profiles and posts, and Postman will be used for API testing and validation.
 
+Accomplishments:
+-Implemented MongoDB: Integrated MongoDB for database operations, allowing you to store and retrieve data efficiently.
+
+-CRUD Functionality: Added CRUD (Create, Read, Update, Delete) operations to manage data effectively within your application.
+
+-Partials Integration: Utilized partials to modularize your code and enhance code reusability across different views.
+
+-Backlinks: Implemented different backlinks to navigate between pages and sections within your application.
+
+-Controllers: Created controllers to handle various routes and logic within your application, improving code organization and maintainability.
+
+-Dependencies: Added necessary dependencies to your project, ensuring smooth functionality and access to essential libraries.
+
+-Suggestions for Further Improvement:
+
+Error Handling: Enhance error handling mechanisms to gracefully manage errors and provide informative responses to users.
+
+-Validation: Implement input validation to ensure data integrity and security within your application.
+
+-Testing: Conduct thorough testing to identify and address any bugs or issues before deploying your application.
+
+-Security: Implement security measures such as user authentication and authorization to protect sensitive data and prevent unauthorized access.
+
+-Optimization: Continuously optimize your codebase and database queries for improved performance and scalability.
+
+-Documentation: Document your code, including functions, routes, and configurations, to facilitate easier maintenance and collaboration.
+
+Overall, I've made great strides not only in my knowledge but UI/UX of becoming a full-fledged developer. I continous love to learn and build out all my skills, in concepts, theories and breakdown of practiticum. It has not only been a formidable challenge but so exciting to learn and grow through the different challenges! 
+
+I really hit a pinacle where learning became my main focus and started focusing on the syntax, functions & growth of the overall process. I love this experience and everyting up to it, and I will never stop developing and building my skills in engineering. Such a great place to be and tackle into. 
+
+
+Benefits that I've gotten better at:
+
+1. Comprehensive Understanding: Actively engaging with tutorials and hands-on practice helps in developing a comprehensive understanding of the subject matter.
+
+2. Skill Development: Through consistent practice and implementation, you're honing your coding skills and gaining practical experience in building real-world applications.
+3. Community Engagement: By citing sources and contributing to version control repositories, you're actively participating in the developer community and promoting collaboration and knowledge sharing.
+
+Learn Better At:
+
+1. utorials and Code Walkthroughs: Engaged in tutorials and code walkthroughs to grasp essential concepts and techniques.
+2. Hands-On Practice: Applied the concepts learned from tutorials by implementing them in your project, reinforcing your understanding through practical experience.
+3. Commitment to Version Control: Committed your progress regularly to version control systems like Git, allowing for easy tracking of changes and collaboration with others.
+4. Documentation and Citation: Documented your progress and cited the sources of tutorials and code snippets used in your project, ensuring proper attribution and acknowledging the resources that contributed to your learning journey.
+
+Recommendations for Future Success: 
+
+1. Continued Learning: Maintain your commitment to learning by exploring new tutorials, documentation, and resources to expand your knowledge further.
+2. Code Review and Feedback: Seek feedback from peers or mentors by sharing your codebase, allowing for constructive criticism and opportunities for improvement.
+3. Portfolio Development: Consider showcasing your projects and contributions in a portfolio to highlight your skills and accomplishments to potential employers or collaborators.
+4. Networking: Engage with the developer community through forums, meetups, and online platforms to connect with like-minded individuals, share experiences, and learn from others.
 ---
 Project Goals:
 1. Develop a functional social networking platform similar to MySpace.
@@ -223,6 +275,29 @@ Regulatory Compliance: Adhering to data protection regulations such as GDPR (Gen
 
 Feedback and Iteration: Continuously gathering feedback from users and iterating on the application based on user insights and market trends is essential for long-term success. Implementing feedback mechanisms and maintainin
 
+----------------------------------------------
+
+Hardships & Through The Application Development:
+
+1. Views Implementation:
+
+Develop the user interface for the to-do list, including forms for adding/updating tasks and a list view to display existing tasks.
+
+2. Frontend Integration:
+
+Connect frontend components with backend routes to enable interaction with the server-side functionality.
+ 3. More Testing and Debugging:
+
+Test the application thoroughly to identify and fix any bugs or issues that may arise during usage.
+
+4. Documentation and Refactoring:
+
+Document the codebase and refactor where necessary to improve readability, maintainability, and performance.
+
+5. Optional Enhancements:
+
+Consider adding features like task prioritization, due dates, filtering, and sorting to enhance the functionality of the to-do list.
+
 ## Trello
 Trello - https://trello.com/b/bj1NMsPJ/project-2-sei-2024-yim-tyler
 
@@ -231,23 +306,125 @@ Trello - https://trello.com/b/bj1NMsPJ/project-2-sei-2024-yim-tyler
 
 // CITATION 
 <!-- /*************************************************************************************** -->
-*    Title: Intro to Express, Intro to REST, MVC, EJS, Static ASSETS, REST: CREATE, REST: DELETE
-            EJS Partials, CRUD with Mongosh, REST APIs amd CRUD, Authentication
-*    Author: Billie Heidelberg, Justin White
-*    Date: 3-16/ 3-18/24
-*    Code version: Latest 3/18
-*    Availability: https://git.generalassemb.ly/SEIR-Pixel-Pandas/Calendar
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/6.%20Mongoose%20Relationships.md
-*                   https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/5.%20Intro%20to%20Mongoose.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/2.%20Intro%20to%20MongoDB.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/10.%20EJS%20Partials.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/9.%20REST:%20Update.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/8.%20REST:%20Delete.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/7.%20REST:%20New%20%2B%20Create%20Routes.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/5.%20MVC%20and%20EJS.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/4.%20REST:%20Intro%20to%20Rest%20-%20Show%20Route.md
-                    https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/2.%20Intro%20to%20Express.md
-<!-- ***************************************************************************************/ -->
+CITATION: 
+
+Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+Date: 3/16
+Code Version: Latest 3/18
+Availability: Intro to Express on GitHub
+Title: Intro to REST
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/4.%20REST:%20Intro%20to%20Rest%20-%20Show%20Route.md
+
+Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+Date: 3/18
+Code Version: Latest 3/18
+Availability: Intro to REST on GitHub
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/4.%20REST:%20Intro%20to%20Rest%20-%20Show%20Route.md
+Title: MVC and EJS
+
+
+Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+Date: 3/24
+Code Version: Latest 3/18
+Availability: MVC and EJS on GitHub
+Title: Static ASSETS
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/5.%20MVC%20and%20EJS.md
+
+Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+Date: 3/24
+Code Version: Latest 3/18
+Availability: Static ASSETS on GitHub (Note: I assumed this is part of the MVC and EJS lesson)
+Title: REST: CREATE
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/7.%20REST:%20New%20%2B%20Create%20Routes.md
+
+Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+Date: 3/24
+Code Version: Latest 3/18
+Availability: REST: CREATE on GitHub
+Title: REST: DELETE
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/8.%20REST:%20Delete.md
+Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+Date: 3/24
+Code Version: Latest 3/18
+Availability: REST: DELETE on GitHub
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/10.%20EJS%20Partials.md
+
+Title: EJS Partials
+
+Authors: Billie Heidelberg, Justin White, Andrew Deitrick
+Date: 3/24
+Code Version: Latest 3/18
+Availability: EJS Partials on GitHub
+Title: CRUD with Mongosh
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Mongo-Mongoose-Fundamentals/blob/main/Lessons/3.%20CRUD%20with%20Mongosh.md
+
+Authors: Justin White, Andrew DeitrickBillie Heidelberg
+Date: 3/24
+Code Version: Latest 3/18
+Availability: CRUD with Mongosh on GitHub
+Title: REST APIs and CRUD
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Internet-Fundamentals/blob/main/Lessons/3.%20REST%20APIs%20%26%20CRUD.md
+
+Authors: Justin White, Andrew Deitrick Billie Heidelberg
+Date: 3/24
+Code Version: Latest 3/18
+Availability: REST APIs and CRUD on GitHub
+Title: Authentication
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+Authors: Justin White, Andrew Deitrick, Billie Heidelberg
+Date: 3/24
+Code Version: Latest 3/18
+Availability: Authentication on GitHub
+https://git.generalassemb.ly/SEIR-Pixel-Pandas/Express-Fundamentals/blob/main/Lessons/12.%20User%20Auth/BuildMe1_intro.md
+
+YouTube Video:
+
+Title: "Express.js Tutorial for Beginners | Build a Blog with Express and MongoDB"
+Author: Academind
+Date: [Date of video publication]
+Availability: Express.js Tutorial for Beginners on YouTube
+Blog Router:
+
+Description: A router for handling blog-related routes in an Express.js application. It likely includes routes for creating, reading, updating, and deleting blog posts, as well as other related functionality.
+Availability: [Location of the Blog Router code] (Replace this with the specific location of the code in your project)
+
+Express.js Documentation:
+
+Website: Express.js Official Documentation
+Description: The official documentation for the Express.js web application framework for Node.js. It provides comprehensive guides, API references, and examples for building web applications with Express.
+
+MongoDB Documentation:
+
+Website: MongoDB Official Documentation
+Description: The official documentation for MongoDB, a popular NoSQL database. It includes guides, tutorials, and references for using MongoDB, including topics like CRUD operations, schema design, aggregation, and more.
+
+Mongoose Documentation:
+
+Website: Mongoose Official Documentation
+Description: The official documentation for Mongoose, an object modeling tool for MongoDB and Node.js. It provides guides and API references for working with MongoDB data in Node.js applications, including schema definition, querying, validation, and middleware.
+
+Stack Overflow:
+
+Website: Stack Overflow
+Description: Stack Overflow is a popular question and answer website for programming and development-related topics. You can find a wealth of information and solutions to common problems related to Express.js, MongoDB, Mongoose, and other technologies.
+
+Medium:
+
+Website: Medium
+Description: Medium is a publishing platform where individuals and organizations can share articles and blog posts on various topics, including web development. You can find tutorials, guides, and insights written by developers and experts in the field.
+
+YouTube:
+
+Website: YouTube
+Description: YouTube hosts a vast collection of video tutorials and lectures on programming topics, including Express.js, MongoDB, Mongoose, and related technologies. You can find step-by-step guides, walkthroughs, and explanations of concepts by searching for relevant keywords.
+
+FreeCodeCamp:
+
+Website: FreeCodeCamp
+Description: FreeCodeCamp offers free online courses and tutorials on web development, including topics like Node.js, Express.js, MongoDB, and Mongoose. You can follow structured learning paths and complete hands-on projects to practice your skills.
+
+GitHub:
+
+Website: GitHub
+Description: GitHub is a platform for hosting and collaborating on code repositories. You can find open-source projects, sample applications, and code snippets related to Express.js, MongoDB, and other technologies. Explore repositories and contribute to projects to learn and improve your skills.
