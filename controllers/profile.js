@@ -6,7 +6,83 @@
 // // const blogPosts = require('../models/blogPosts')
 // // const profiles = require('../models/profile')
 
+app.post('/editProfile/updateStatus', (req, res) => {
+    const { status } = req.body;
+  
+    // Logic to update status in the database
+  });
 
+  app.post('/editProfile/updateAccountInfo', (req, res) => {
+    const { Name, Location, lastUpdate } = req.body;
+  
+    // Update account information in the database based on the received data
+  });
+
+  router.post('/updateBasicInfo', async (req, res) => {
+    const { userId, gender, birthday, hometown } = req.body;
+  
+    try {
+      // Find the user document in the database by userId
+      let user = await User.findById(userId);
+  
+      // Update the basic information fields
+      user.gender = gender;
+      user.birthday = birthday;
+      user.hometown = hometown;
+  
+      // Save the updated user document
+      user = await user.save();
+  
+      res.status(200).json({ message: 'Basic information updated successfully', user });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server Error' });
+    }
+  });
+    
+  
+    // Update account information in the database based on the received data
+
+
+    router.post('/updateBasicInfo', async (req, res) => {
+        const { userId, accountName, location, lastUpdate } = req.body;
+      
+        try {
+          // Find the user document in the database by userId
+          let user = await User.findById(userId);
+      
+          // Update the basic information fields
+          user.accountName = accountName;
+          user.location = location;
+          user.lastUpdate = lastUpdate;
+      
+          // Save the updated user document
+          user = await user.save();
+      
+          res.status(200).json({ message: 'Basic information updated successfully', user });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Server Error' });
+        }
+      });
+
+  app.post('/editProfile/updateContactInfo', (req, res) => {
+    const { email, instagram, mobile, address, website } = req.body;
+  
+    // Update account information in the database based on the received data
+  });
+
+  app.post('/editProfile/updateEducationInfo', (req, res) => {
+    const { college, highschool } = req.body;
+  
+    // Update account information in the database based on the received data
+  });
+
+  app.post('/editProfile/editBlog', (req, res) => {
+    const { postTitle, postContent, postImage, postDate } = req.body;
+  
+    // Update account information in the database based on the received data
+  });
 // // // PROFILE
 // // router.get('/profile', (req , res) => {
 // //     res.render('profile', { blogPosts });

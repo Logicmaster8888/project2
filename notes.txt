@@ -722,7 +722,9 @@ router.get('/', (req, res) => {
 // });
 
 
-
+app.post('/updateStatus', (req, res) => {
+  // Logic to process form data and update status
+});
 
 // // GET ROUTE
 // router.route("/").get(getBlogs);
@@ -843,3 +845,6 @@ router.get('/', (req, res) => {
 // Have Home - ALL Blogs
 Profile - ALL PROFILE
 
+Home status
+Profile status
+Edit Profile status

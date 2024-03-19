@@ -18,6 +18,7 @@ router.get('/newPost', (req, res) =>{
 router.get('/editProfile', (req, res) =>{
     res.render('editProfile');
 })
+
 router.get('/profile', (req, res) =>{
     res.render('profile');
 })

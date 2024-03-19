@@ -10,6 +10,12 @@
 //     res.render('newBlogs');
 // };
 
+// app.post('/editBlog', (req, res) => {
+//     const { postTitle, postContent, postImage, postDate } = req.body;
+  
+//     // Update account information in the database based on the received data
+//   });
+
 // // DELETE BLOG
 // const deleteBlog = (req, res) => {
 //     const blogIndex = allBlogs.findIndex {
