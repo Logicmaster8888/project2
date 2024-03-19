@@ -1,11 +1,11 @@
-// const router = require('express').Router()
-// const db = require('../models')
-// const bcrypt = require('bcrypt');
+const router = require('express').Router()
+const db = require('../models')
+const bcrypt = require('bcrypt');
 
-// // 1) New User form
-// router.get('/new', (req, res) => {
-//     res.render('user/newUser', { currentUser: req.session.currentUser });
-// }); 
+// 1) New User form
+router.get('/new', (req, res) => {
+    res.render('user/newUser', { currentUser: req.session.currentUser });
+}); 
 
 
 // // 2) Post route to create user

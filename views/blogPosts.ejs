@@ -10,23 +10,25 @@
 <body>
     <!-- Navbar -->
     <% include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
-
-    <h1>Home</h1>  
-
-    <!-- Form to create a new blog post -->
+    <h1>All Blogs</h1>
+    <ul>
+      <% blogs.forEach(blog => { %>
+        <li>
+          <h2><%= blog.title %></h2>
+          <p><%= blog.content %></p>
+        </li>
+      <% }); %>
+    </ul>
     <form action="/blogPosts" method="POST">
-        <!-- Include partials for profile photo and status -->
         <% include('./partials/profilePhoto.ejs') %>
         <% include('./partials/status.ejs') %>
 
-        <!-- Include partials for profile inputs and blog inputs -->
         <% include('./partials/profileInputs.ejs') %>
         <% include('./partials/blogInputs.ejs') %>
 
         <button type="submit">Create Blog Post</button>
     </form>
 
-    <!-- Link to go back to the home page -->
     <a href="/">Go Back</a>
 </body>
 </html>

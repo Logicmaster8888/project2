@@ -3,8 +3,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-// INDEX - see all blog posts
-router.get("/", (req, res) => {
+// // INDEX - see all blog posts
+router.get("/blogposts", (req, res) => {
   db.BlogPost.find().then((blogPosts) => {
     res.render("blogPost", { blogPosts: blogPosts });
   });
@@ -12,13 +12,13 @@ router.get("/", (req, res) => {
 
 // NEW - Show form to create new blog post
 router.get("/new", (req, res) => {
-  res.render("newBlog");
+  res.render("index");
 });
 
 // CREATE - Add new blog post to database
 router.post("/", async (req, res) => {
   await db.BlogPost.create(req.body).then((blogPost) =>
-    res.redirect("/blogPosts/" + blogPost._id)
+    res.redirect("/index" + blogPost._id)
   );
 });
 
@@ -26,13 +26,13 @@ router.post("/", async (req, res) => {
 router.get("/:id", (req, res) => {
   db.BlogPost.findById(req.params.id)
     .then((blogPost) => {
-      res.render("blog-post-details", { blogPost: blogPost });
+      res.render("index", { blogPost: blogPost });
     })
     .catch(() => res.render("404"));
 });
 
 // EDIT - Show form to edit a blog post
-router.get("/:id/edit", (req, res) => {
+router.get("/edit:id/", (req, res) => {
   db.BlogPost.findById(req.params.id).then((blogPost) => {
     res.render("editBlog", { blogPost: blogPost });
   });
@@ -41,7 +41,7 @@ router.get("/:id/edit", (req, res) => {
 // UPDATE - Update a specific blog post in the database
 router.put("/:id", async (req, res) => {
   await db.BlogPost.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
-    (blogPost) => res.redirect("/blogPosts/" + blogPost._id)
+    (blogPost) => res.redirect("/index" + blogPost._id)
   );
 });
 

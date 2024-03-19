@@ -1,20 +1,20 @@
-// const express = require('express');
-// const router = express.Router();
-// const ProfileController = require('../controllers/profileController');
+const express = require('express');
+const router = express.Router();
+const ProfileController = require('../controllers/profileController');
 
-// // Update account information
-// router.post('/updateAccountInfo', ProfileController.updateAccountInfo);
+// Update account information
+router.post('profile/updateAccountInfo', ProfileController.updateAccountInfo);
 
-// // Update basic information
-// router.post('/updateBasicInfo', ProfileController.updateBasicInfo);
+// Update basic information
+router.post('profile/updateBasicInfo', ProfileController.updateBasicInfo);
 
-// // Update contact information
-// router.post('/updateContactInfo', ProfileController.updateContactInfo);
+// Update contact information
+router.post('profile/updateContactInfo', ProfileController.updateContactInfo);
 
-// // Update education information
-// router.post('/updateEducationInfo', ProfileController.updateEducationInfo);
+// Update education information
+router.post('profile/updateEducationInfo', ProfileController.updateEducationInfo);
 
-// module.exports = router;
+module.exports = router;
 
 // CITATION 
 /***************************************************************************************

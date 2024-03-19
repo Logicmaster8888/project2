@@ -1,5 +1,5 @@
 const express = require('express');
-// const router = express.Router();
+const router = express.Router();
 
 // const blogPosts = require('../models/blogPosts')
 // const blogRoutes = require('./blogRoutes');
@@ -10,17 +10,20 @@ const express = require('express');
 // router.use('/user', userRoutes);
 
 
-
+// router.get('/', (req, res)=> {
+//     res.render('blogPost')
+// }) f
 
 // CREATING ROUTE
 // router.post('/', (req, res) => {
 
 // })
-// HOME ROUTE // Front Facing Screen
-// router.get('/', (req, res) => { 
-//     // changed for app to Router
-//     res.render("index");
+// // HOME ROUTE // Front Facing Screen
+
 // }); // Change from Sender to Render for specific page// Use res.render('index'); to render index.ejs page
+
+
+
 
 // BLOG POST // SEE ALL
 router.get('/blogPost/:id', (req, res) => { // changed for app to Router
@@ -33,17 +36,17 @@ router.get('/blogPost/:id', (req, res) => { // changed for app to Router
 // });
 
 // EDIT BLOG POSTS // Function is going to be inside of the page
-router.get('/editPosts', (req, res) => { // changed for app to Router
+router.get('blog/editPosts', (req, res) => { // changed for app to Router
     res.render("editPosts");
 });
 
 // NEW POST
-router.get('/newPost', (req, res) => { // changed for app to Router
+router.get('blog/newPost', (req, res) => { // changed for app to Router
     res.render("newPost");
 });
 
 // PROFILE
-router.get('/profile', (req, res) => { // changed for app to Router
+router.get('blog/profile', (req, res) => { // changed for app to Router
     res.render("profile");
 });
 
@@ -52,13 +55,13 @@ router.get('/editProfile', (req, res) => { // changed for app to Router
     res.render("editProfile");
 });
 
-// 404 ERROR
-router.get('/404', (req, res) => { // changed for app to Router
-    res.render("404");
-});
+// // 404 ERROR
+// router.get('/404', (req, res) => { // changed for app to Router
+//     res.render("404");
+// });
 
 // EDIT LOGIN / LOGOUT  // Function is going to be inside of the page
-router.get('/login', (req, res) => { // changed for app to Router
+router.get('blog/login', (req, res) => { // changed for app to Router
     res.render("login");
 });
 

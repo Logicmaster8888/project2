@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 // const Profile = require('../models/profile');
 
-router.post('/updateStatus', async (req, res) => {
+router.post('blog/updateStatus', async (req, res) => {
     const { userId, status } = req.body;
   
     try {

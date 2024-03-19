@@ -18,7 +18,7 @@
 // })
 
 // // DELETE ROUTE
-// router.delete('/blogPosts/:index', (req, res) => {
+// router.delete('/blogPosts/:id', (req, res) => {
 //     blogPosts.splice(req.params.index, 1)
 //     res.redirect('/blogPosts')
 // }) // models
@@ -40,12 +40,12 @@
 // module.exports = router 
 
 
-// CITATION 
-/***************************************************************************************
-*    Title: SEIR-Pixel-Pandas/Fruits
-*    Author: Billie Heidelberg, Justin White
-*    Date: 3-16/ 3-18/24
-*    Code version: Latest 3/18
-*    Availability: https://git.generalassemb.ly/SEIR-Pixel-Pandas/fruits
-*
-***************************************************************************************/
+// // CITATION 
+// /***************************************************************************************
+// *    Title: SEIR-Pixel-Pandas/Fruits
+// *    Author: Billie Heidelberg, Justin White
+// *    Date: 3-16/ 3-18/24
+// *    Code version: Latest 3/18
+// *    Availability: https://git.generalassemb.ly/SEIR-Pixel-Pandas/fruits
+// *
+// ***************************************************************************************/

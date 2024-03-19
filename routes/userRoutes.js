@@ -1,23 +1,23 @@
-// const express = require('express');
-// const router = express.Router();
-// const UserController = require('../controllers/userController');
+const express = require('express');
+const router = express.Router();
+const UserController = require('../controllers/userController');
 
-// // Register a new user
-// router.post('/register', UserController.registerUser);
+// Register a new user
+router.post('/register', UserController.registerUser);
 
-// // Login an existing user
-// router.post('/login', UserController.loginUser);
+// Login an existing user
+router.post('/login', UserController.loginUser);
 
-// // Get user profile
-// router.get('/profile', UserController.getUserProfile);
+// Get user profile
+router.get('/profile', UserController.getUserProfile);
 
-// // Update user profile
-// router.put('/profile', UserController.updateUserProfile);
+// Update user profile
+router.put('/profile', UserController.updateUserProfile);
 
-// // Logout user
-// router.get('/logout', UserController.logoutUser);
+// Logout user
+router.get('/logout', UserController.logoutUser);
 
-// module.exports = router;
+module.exports = router;
 
 // CITATION 
 /***************************************************************************************

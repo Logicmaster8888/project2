@@ -7,9 +7,9 @@ const router = express.Router();
 // });
 // router.param('index', blog.checkIfValidParam);
 
-router.get('/', (req, res) =>{
-    res.render('index');
-})
+// router.get('/', (req, res) =>{
+//     res.render('index');
+// })
 
 router.get('/newBlog', (req, res) =>{
     res.render('newBlog');
@@ -32,7 +32,7 @@ router.get('/editBlogs', (req, res) =>{
 // })
 
 router.get('/blogPost', (req, res) =>{
-        res.render('blogPost');
+        res.render('/blogPost');
     })
     
 
@@ -41,9 +41,9 @@ router.get('/login', (req, res) =>{
 })
 
 // SHOW PAGE
-router.get('/404', (req, res) =>{
-    res.render('404');
-})
+// router.get('/404', (req, res) =>{
+//     res.render('404');
+// })
 
 const {
 getAllBlogs,
@@ -53,7 +53,7 @@ updateBlog,
 createBlog,
 editBlog,
 showBlog,
- } = require ("../controllers/blog1");
+ } = require ("../controllers/blog");
 
 module.exports = router;
 

@@ -23,7 +23,6 @@
   "description": "SocialSync\r ---\r SocialSync is a vibrant social networking platform designed to evoke a sense of community and connection among users. With customizable profiles and dynamic feeds, SocialSync provides a space for users to express themselves authentically and engage with others in meaningful ways. Users can personalize their profiles with photos, bios, and interests, creating a space that reflects their personality and passions.",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC"

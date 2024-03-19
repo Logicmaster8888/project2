@@ -4,13 +4,13 @@ const dotenv = require("dotenv").config(); // Fruits
 const path = require('path'); // Fruits
 const express = require('express'); // Fruits
 const app = express(); // Express APP Good to Go!
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
 // SERVER ROUTES
 // app.use('/', require('./routes/blogRoutes'));
-const blogPost = require('./models/blogPosts');
+// const blogPost = require('./models/blogPosts');
 // const blogRoutes = require('./routers/blogRoutes');
 
 // Set port
@@ -22,12 +22,12 @@ const session = require('express-session');
 // const db = require('./models');
 // --------------------------------------------------------------
 // Import controllers // GOOD
-const blogController = require('./controllers/blog1');
+// const blogController = require('./controllers/blog1');
 // const isAuthenticatedController = require('./controllers/isAuthenticatedController');
-const loginController = require('./controllers/loginController');
-const profileController = require('./controllers/profile');
-const sessionController = require('./controllers/sessionController');
-const userController = require('./controllers/userController');
+// const loginController = require('./controllers/loginController');
+// const profileController = require('./controllers/profile');
+// const sessionController = require('./controllers/sessionController');
+// const userController = require('./controllers/userController');
 
 // app.use('/profile', profile');
 // app.use('/sessions', sessionsController'); 
@@ -35,17 +35,17 @@ const userController = require('./controllers/userController');
 
 // -------------------------------------------------------------
 // Import models // GOOD 
-// const blogPosts = require('./models/blogPosts');
-// const index = require('./models/index');
-// const login = require('./models/login');
-// const profile = require('./models/profile');
-// const user = require('./models/user');
+const Blog = require('./models/blogPosts');
+const index = require('./models/index');
+const login = require('./models/login');
+const profile = require('./models/profile');
+const user = require('./models/user');
 // const mongoose = require('mongoose'); // DATABASE TO MONGODB CONNECTION 
 // Initialize Express app
 
 // // ---------------------------------------------------------------------------------------
 // CONNECT to MONGODB using the DB_URL
-mongoose.connect('mongodb+srv://logicmaster8888:Closertothesun24@cluster0.mohcynn.mongodb.net/Node_crud', {});// Assign the DB_URL
+mongoose.connect('mongodb+srv://logicmaster8888:7CzpIKnuduOn7lnH@cluster0.mohcynn.mongodb.net/Node_crud', {});// Assign the DB_URL
 const DB_URL = process.env.DB_URL;
  // keeps my URL Hidden 
 
@@ -71,7 +71,8 @@ db.once('open', () => console.log('Connected to the local database!'));
 // VIEWS ENGINE
 app.set('view engine', 'ejs'); // Fruits
 app.set('views', path.join(__dirname, 'views')); // Fruits
-app.use(bodyParser.json()); // Fruits
+// app.use(bodyParser.json()); // Fruits
+
 
 // app.use(session({
 //     secret: 'my secret key',
@@ -86,10 +87,10 @@ app.use(bodyParser.json()); // Fruits
 //     next(); 
 // }); // Learn how to store with this !
 
-const fruitsCtrl = require('./controllers/blog')
+// const fruitsCtrl = require('./controllers/blog')
 
 
-app.use('/fruits', fruitsCtrl)
+// app.use('/fruits', fruitsCtrl)
 
 // Middleware
 app.use(morgan('tiny')); // Logging // Fruits
@@ -121,10 +122,14 @@ app.use(methodOverride('_method')); // Method override // Fruits
 // const blogRouter = require('./routes/blogRoutes');
 // app.use('/blogRoutes', blogRouter);
 
-// The "catch-all" route: Runs for any other URL that doesn't match the above routes
-app.get('*', function (req, res) {
-    res.render('404')
-}); // Fruits
+// // The "catch-all" route: Runs for any other URL that doesn't match the above routes
+// app.get('*', function (req, res) {
+//     res.render('404')
+// }); // Fruits
+
+// app.get('/', (res, req)=> {
+//     res.send(console.log('hello'))
+// })
 
 // Start the server
 app.listen(PORT, () => { // callback V
