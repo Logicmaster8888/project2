@@ -85,41 +85,31 @@ Project Duration: 2 weeks
 Project Overview:
 
 Develop a simplified version of MySpace, a social networking platform, using modern web development technologies such as Node.js, Express, MongoDB, HTML, and CSS. The application will support CRUD operations for user profiles and posts, and Postman will be used for API testing and validation.
+--------------------------------------------------------------------------------
 
 Accomplishments:
 -Implemented MongoDB: Integrated MongoDB for database operations, allowing you to store and retrieve data efficiently.
-
 -CRUD Functionality: Added CRUD (Create, Read, Update, Delete) operations to manage data effectively within your application.
-
 -Partials Integration: Utilized partials to modularize your code and enhance code reusability across different views.
-
 -Backlinks: Implemented different backlinks to navigate between pages and sections within your application.
-
 -Controllers: Created controllers to handle various routes and logic within your application, improving code organization and maintainability.
-
 -Dependencies: Added necessary dependencies to your project, ensuring smooth functionality and access to essential libraries.
+-Identical Form Fields for the myspace functionality
 
 -Suggestions for Further Improvement:
 
 Error Handling: Enhance error handling mechanisms to gracefully manage errors and provide informative responses to users.
-
 -Validation: Implement input validation to ensure data integrity and security within your application.
-
 -Testing: Conduct thorough testing to identify and address any bugs or issues before deploying your application.
-
 -Security: Implement security measures such as user authentication and authorization to protect sensitive data and prevent unauthorized access.
-
 -Optimization: Continuously optimize your codebase and database queries for improved performance and scalability.
-
 -Documentation: Document your code, including functions, routes, and configurations, to facilitate easier maintenance and collaboration.
 
 Overall, I've made great strides not only in my knowledge but UI/UX of becoming a full-fledged developer. I continous love to learn and build out all my skills, in concepts, theories and breakdown of practiticum. It has not only been a formidable challenge but so exciting to learn and grow through the different challenges! 
 
 I really hit a pinacle where learning became my main focus and started focusing on the syntax, functions & growth of the overall process. I love this experience and everyting up to it, and I will never stop developing and building my skills in engineering. Such a great place to be and tackle into. 
 
-
 Benefits that I've gotten better at:
-
 1. Comprehensive Understanding: Actively engaging with tutorials and hands-on practice helps in developing a comprehensive understanding of the subject matter.
 
 2. Skill Development: Through consistent practice and implementation, you're honing your coding skills and gaining practical experience in building real-world applications.
