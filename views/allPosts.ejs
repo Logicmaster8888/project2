@@ -3,6 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <ul>
+        <% blogPosts.forEach(post => { %>
+            <li>
+                <% include ./partials/postHeader.ejs %>
+                
+                <% include ./partials/postBody.ejs %>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/forms.css">
@@ -10,7 +30,7 @@
     <h1>Home</h1>  
 </head>
 <body>
- <% include ('./partials/allBlogPosts.ejs') %> 
+ 
     <form action="/blogPost/" method="POST">
         <%- include('./partials/profilePhoto.ejs')%>
         <%- include('./partials/status.ejs')%>

@@ -273,3 +273,622 @@ and apply it through then put Auth and login.
 But have it so that it's not connected. But can be later.
 
 Option
+
+https://www.youtube.com/watch?v=nvSVZW2x8BQ&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt&index=4
+
+https://www.youtube.com/watch?v=Nmv2-oSQyWE
+
+https://www.youtube.com/watch?v=gv3FFnOdCIo&list=PL4cUxeGkcC9hAJ-ARcYq_z6lDZV7kT1xD&index=2
+
+https://www.youtube.com/watch?v=fgTGADljAeg
+
+https://www.youtube.com/watch?v=H9M02of22z4&t=602s
+
+https://github.com/dmalvia/Express_MongoDB_Rest_API_Tutorial/tree/main\
+
+https://www.youtube.com/watch?v=nvSVZW2x8BQ&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt&index=4
+
+
+// API Routes
+
+// app.get("/api/blogs", (req, res) => {
+//     res.json({message: "Get all blogs"});
+// });
+
+// app.get("/api/blogs", (req, res) => {
+//     res.status(200).json({message: "Get all blogs"});
+// });
+
+// app.use("/api/blogs", require("./routes/blogRoutes"));
+
+?/ Home controllers
+
+// const express = require('express')
+// const router = express.Router();
+
+// const fruits = require('../models/fruits')
+// const blogPosts = require('../models/blogPosts')
+
+
+// // New POST 
+// router.get('/home', (req , res) => {
+//     res.render('index.ejs')
+// })
+
+// // GET ROUTE
+// router.get('/blogPosts/new', (req, res) => {
+//     res.render('newPost.ejs')
+// })
+
+// // DELETE ROUTE
+// router.delete('/blogPosts/:index', (req, res) => {
+//     blogPosts.splice(req.params.index, 1)
+//     res.redirect('/blogPosts')
+// }) // models
+
+// // POST ROUTE
+// router.post("/blogPosts/", (req, res) => {
+//     req.body.readyToEat = req.body.readyToEat === 'on' ? true : false;
+//     blogPosts.push(req.body);
+//     res.render('index.ejs', { blogPosts });
+// });
+
+// // SHOW ROUTE
+// router.get('/blogPosts/:index', (req, res) => {
+//     console.log(req.params.index)
+//     const blogPost = blogPosts [req.params.index]
+//     res.render('show.ejs', {blogPost})
+// })
+
+// module.exports = router 
+
+
+
+// Fruits controller
+
+
+// const express = require('express')
+// const router = express.Router();
+
+// const fruits = require('../models/fruits')
+// const blogPosts = require('../models/blogPosts')
+
+
+// // INDEX ROUTE
+// router.get('/blog', (req, res) => {
+//    res.render('index.ejs', { fruits })
+// });
+
+// // NEW - Send back a form to create new fruits
+// router.get("/new", (req, res) => {
+//     res.render("new-fruit", { currentUser: req.session.currentUser });
+//   });
+
+// // DELETE ROUTE
+// router.delete('/fruits/:index', (req, res) => {
+//     fruits.splice(req.params.index, 1)
+//     res.redirect('/fruits')
+// })
+
+// // Update Route (PUT/Update): This route receives the PUT request sent from the edit route,
+// // edits the specified fruit document using the form data,
+// // and redirects the user back to the show page for the updated location.
+// router.put("/:id", async (req, res) => {
+//     req.body.readyToEat = req.body.readyToEat === "on" ? true : false;
+//     await db.Fruit.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
+//       (fruit) => res.redirect("/fruits/" + fruit._id)
+//     );
+//   });
+
+// // CREATE ROUTE
+// router.get('/fruits/new', (req, res) => {
+//     res.render('new.ejs')
+// });
+
+// // POST ROUTE
+// router.post("/fruits/", (req, res) => {
+//     req.body.readyToEat = req.body.readyToEat === 'on' ? true : false;
+//     fruits.push(req.body);
+//     res.render('index.ejs', { fruits });
+// });
+
+
+// // Edit Route (GET/Read): This route renders a form
+// // the user will use to PUT (edit) properties of an existing fruit
+// router.get("/:id/edit", (req, res) => {
+//     db.Fruit.findById(req.params.id).then((fruit) => {
+//       res.render("edit-fruit", {
+//         fruit: fruit,
+//         currentUser: req.session.currentUser 
+//       });
+//     });
+//   });
+
+
+
+
+// // POST ROUTE
+// router.post("/fruits/", (req, res) => {
+//     req.body.readyToEat = req.body.readyToEat === 'on' ? true : false;
+//     fruits.push(req.body);
+//     res.render('index.ejs', { fruits });
+// });
+
+// // SHOW ROUTE
+// router.get('/fruits/:index', (req, res) => {
+//     console.log(req.params.index)
+//     const fruit = fruits [req.params.index]
+//     res.render('show.ejs', {fruit})
+// })
+
+
+// module.exports = router 
+
+POKEMON CONTROLLER//
+
+// const express = require('express');
+// const router = express.Router()
+
+// const pokemon = require('../models/pokemon');
+
+// router.get('/pokemon/:name', (req, res) => {
+//     res.send({pokemon: pokemon.filter(p => p === req.params.name)})
+// }) 
+
+// module.exports = router;
+
+
+// BLOG1 CONTROLLER
+
+// //@desc Get all blogs
+// //@route GET /api/blogs
+// //@access public // Later on Private when introduce the Auth
+// // Not Logical
+// const getBlogs = (req, res) => {
+//     res.status(200).json({ message: `Get All Blogs`});
+// };
+
+// //@desc Create New Blog
+// //@route POST /api/blogs
+// //@access public
+// // Not Logical
+// const createBlog = (req, res) => {
+//     console
+//     res.status(201).json({ message: `Create Blog`});
+// };
+
+
+// //@desc Get New Blog
+// //@route GET /api/blogs/:id
+// //@access public
+// // Not Logical
+// const getBlog = (req, res) => {
+//     res.status(200).json({ message: `Create Blog for ${req.params.id}`});
+// };
+
+// //@desc Update New Blog
+// //@route UPDATE /api/blogs/:id
+// //@access public
+// // Not Logical
+// const updateBlog = (req, res) => {
+//     res.status(201).json({ message: `Update Blog for ${req.params.id}`});
+// };
+
+// //@desc Delete New Blog
+// //@route DELETE /api/blogs/:id
+// //@access public
+// //Not Logical
+// const deleteBlog = (req, res) => {
+//     res.status(200).json({ message: `Delete Blog for ${req.params.id}`});
+// };
+
+// module.exports = {
+//     getBlogs,
+//     createBlog,
+//     getBlog,
+//     updateBlog,
+//     deleteBlog,
+// };
+
+
+// /***************************************************************************************
+// *    Citation: Line 1-49
+// *    Title: Nodejs & Express Crash Course
+// *    Author: Dipesh Malvia, 
+// *    Date Accessed: 3/18 -3/19/24
+// *    Date: Jan 31, 2023
+// *    Code version: <code version>
+// *    Availability: https://github.com/dmalvia/Express_MongoDB_Rest_API_Tutorial
+// *
+// ***************************************************************************************/
+
+// MODELS // FRUITS
+
+// // aka fruits model
+// const mongoose = require('mongoose');
+// const fruitSchema = new mongoose.Schema({
+//     name: {type: String, required: true},
+//     color: {type:String},
+//     readyToEat: {type: Boolean},
+//     user: { type: mongoose.Types.ObjectId, ref: 'User'}
+// })
+
+
+// module.exports = mongoose.model("Fruit", fruitSchema)
+
+
+// MODELS // POKEMON
+
+// Import the necessary modules
+const mongoose = require('mongoose');
+
+// Define the schema for the Pokemon model
+const pokemonSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    type: {
+        type: String,
+        required: true
+    },
+    height: {
+        type: Number,
+        required: true
+    },
+    weight: {
+        type: Number,
+        required: true
+    },
+    abilities: {
+        type: [String],
+        required: true
+    }
+});
+
+// Create the Pokemon model using the schema
+const Pokemon = mongoose.model('Pokemon', pokemonSchema);
+
+// Export the model to make it accessible in other files
+module.exports = Pokemon;
+
+// Good Example from App
+
+// const mongoose = require('mongoose');
+
+// const userSchema = new mongoose.Schema({
+//     name: {
+//         type: String,
+//         required: true,
+//     },
+//     email: {
+//         type: String,
+//         required: true, 
+//     },
+//     phone: {
+//         type: String,
+//         required: true,
+//     },
+//     image: {
+//         type: String,
+//         required: true, // Fixed typo here
+//     },
+//     created: {
+//         type: Date,
+//         required: true,
+//         default: Date.now,
+//     },
+// });
+
+// const User = mongoose.model('User', userSchema);
+
+// module.exports = User;
+
+
+// Citation https://www.youtube.com/watch?v=nvSVZW2x8BQ&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt&index=4
+
+// BLOG Router
+
+
+// const express = require('express')
+// const router = express.Router();
+
+// const fruits = require('../models/fruits')
+// const blogPosts = require('../models/blogPosts')
+
+// router.get('/blogPosts', (req, res) => {
+//     res.render('index.ejs', { blogPosts }); }) 
+
+// // router.get('/blogPosts', (req, res) => {
+// //    res.render('index.ejs', { blogPosts })
+// // }) // shoots to index
+
+// // GET ROUTE
+// router.get('/blogPosts/new', (req, res) => {
+//     res.render('newPost.ejs')
+// })
+
+// // DELETE ROUTE
+// router.delete('/blogPosts/:index', (req, res) => {
+//     blogPosts.splice(req.params.index, 1)
+//     res.redirect('/blogPosts')
+// }) // models
+
+// // POST ROUTE
+// router.post("/blogPosts/", (req, res) => {
+//     req.body.readyToEat = req.body.readyToEat === 'on' ? true : false;
+//     blogPosts.push(req.body);
+//     res.render('index.ejs', { blogPosts });
+// });
+
+// // SHOW ROUTE
+// router.get('/blogPosts/:index', (req, res) => {
+//     console.log(req.params.index)
+//     const blogPost = blogPosts [req.params.index]
+//     res.render('show.ejs', {blogPost})
+// })
+
+// module.exports = router 
+
+
+// BLOG Routes
+
+const express = require("express");
+const router = express.Router();
+const blogPost = require('../models/blogPosts');
+// const { 
+//         getBlogs,
+//         createBlog,
+//         getBlog,
+//         updateBlog,
+//         deleteBlog,
+//     } = require('../controllers/blog1Controller');
+
+// // @desc Delete Blog
+// // @AbortController
+
+// // router.route("/api/blogs", (req, res) => {
+// //     res.status(200).json({ Message: "Can I send code through here?"});
+// // });
+
+// / ROUTE WORKS! // WORKS // INDEX = HOME
+router.get('/', (req, res) => {
+    res.render('index')
+})
+
+// GETTING ALL ROUTE // www.localhost:9000/blogPosts/ WORKS
+// router.get('/', async (req, res) => {
+//     try{
+//         const blogPosts = await blogPosts.find()
+//         res.json(blogPosts)
+//     } catch (err) {
+//         res.status(500).json({ message: err.message})
+//        }  
+// });
+
+// Adding in data says 200 so Successful
+// CREATE ROUTE
+// router.post("/newPost", (req, res) => {
+//     const postBlog = {
+//         title: req.body.title,
+//         content: req.body.content,
+//         author: req.body.auther,
+//         date: req.body.date,
+//     };
+  
+//     blogPosts.push(newPost);
+  
+//     console.log(req.body);
+//     console.log("New Blog Added:", newPost);
+  
+//     res.redirect("/newPost"); // Redirect to the drinks index route
+//   });
+
+
+
+// CREATE ROUTE 
+// router.post("/newPost", async (req, res) => {
+//     res.body.blogPosts = req.body.blogPosts === "on" ? true : false;
+//     console.log(req.session);
+//     req.body.user = req.session.currentUser._id;
+//     await db.postBlog.create(req.body).then((postblog) =>
+//     res.redirect("/blogPosts/" + blogPost._id)
+//     );
+// });
+
+// router.post("/newPost", async (req, res) => {
+//     // Extract data from the request body
+//     const newBlogPostData = {
+//         title: req.body.title,
+//         content: req.body.content,
+//         author: req.body.author,
+//         // Assuming date will be automatically set in the database
+//     };
+
+//     // Set the user ID from session
+//     newBlogPostData.user = req.session.currentUser._id;
+
+//     try {
+//         // Create a new blog post using the data
+//         const newBlogPost = await db.postBlog.create(newBlogPostData);
+
+//         // Redirect to the newly created blog post's route
+//         res.redirect("/blogPosts/" + newBlogPost._id);
+//     } catch (error) {
+//         // Handle any errors and send an error response
+//         console.error("Error creating new blog post:", error);
+//         res.status(500).send("Error creating new blog post");
+//     }
+// });
+
+
+// CREATING ROUTE
+// router.post('/', (req, res) => {
+
+// })
+// HOME ROUTE // Front Facing Screen
+// router.get('/', (req, res) => { 
+//     // changed for app to Router
+//     res.render("index");
+// }); // Change from Sender to Render for specific page// Use res.render('index'); to render index.ejs page
+
+// BLOG POST // SEE ALL
+router.get('/blogPost/:id', (req, res) => { // changed for app to Router
+    res.render("blogPosts");
+});
+
+// GETTING ONE ROUTE WORKS! 
+// router.get('/blogPost/:id', (req, res) => {
+//     res.send(req.params.id)
+// });
+
+
+// EDIT BLOG POSTS // Function is going to be inside of the page
+router.get('/editPosts', (req, res) => { // changed for app to Router
+    res.render("editPosts");
+});
+
+// NEW POST
+router.get('/newPost', (req, res) => { // changed for app to Router
+    res.render("newPost");
+});
+
+// PROFILE
+router.get('/profile', (req, res) => { // changed for app to Router
+    res.render("profile");
+});
+
+// EDIT PROFILE
+router.get('/editProfile', (req, res) => { // changed for app to Router
+    res.render("editProfile");
+});
+
+// 404 ERROR
+router.get('/404', (req, res) => { // changed for app to Router
+    res.render("404");
+});
+
+// EDIT LOGIN / LOGOUT  // Function is going to be inside of the page
+router.get('/login', (req, res) => { // changed for app to Router
+    res.render("login");
+});
+
+
+module.exports = router;
+
+// // GET ROUTE
+// router.route("/").get(getBlogs);
+
+// // POST ROUTE
+// router.route("/").post(createBlog);
+
+// // CREATE ROUTE
+// router.route("/:id").get(getBlog);
+
+// // UPDATE ROUTE
+// router.route("/:id",).put(updateBlog);
+
+// // DELETE ROUTE
+// router.route("/:id",).delete(deleteBlog);
+
+// // const {
+// //     getBlogs,
+// //     createBlog,
+// //     getBlog,
+// //     updateBlog,
+// //     deleteBlog,
+// // } = require("../controllers/blogController");
+
+
+// module.exports = router;
+
+//edit PROFILE CONTROLLER
+// const express = require('express')
+// const router = express.Router();
+
+// // Pulling from models database
+// const blogPosts = require('../models/blogPosts')
+// const profile = require('../models/profile')
+// // edit profile pulls from Profile models
+
+// // EDIT PROFILE
+// router.get('/editProfile', (req , res) => {
+//     res.render('editProfile')
+// })
+// // DONE 
+
+// router.get('/blogPosts', (req, res) => {
+//    res.render('index.ejs', { blogPosts })
+// }) // shoots to index
+
+// // GET ROUTE
+// router.get('/blogPosts/new', (req, res) => {
+//     res.render('newPost.ejs')
+// })
+
+// // DELETE ROUTE
+// router.delete('/blogPosts/:index', (req, res) => {
+//     blogPosts.splice(req.params.index, 1)
+//     res.redirect('/blogPosts')
+// }) // models
+
+// // POST ROUTE
+// router.post("/blogPosts/", (req, res) => {
+//     req.body.readyToEat = req.body.readyToEat === 'on' ? true : false;
+//     blogPosts.push(req.body);
+//     res.render('index.ejs', { blogPosts });
+// });
+
+// // SHOW ROUTE
+// router.get('/blogPosts/:index', (req, res) => {
+//     console.log(req.params.index)
+//     const blogPost = blogPosts [req.params.index]
+//     res.render('show.ejs', {blogPost})
+// })
+
+// module.exports = router 
+
+
+// NEW POST PROFILE CONTROLLER CAN BE DONE IN VIEWS
+
+
+// const express = require('express')
+// const router = express.Router();
+
+// const fruits = require('../models/fruits')
+// const blogPosts = require('../models/blogPosts')
+
+
+// // New POST 
+// router.get('/newPost', (req , res) => {
+//     res.render('newPost')
+// })
+// // COMPLETED
+
+// // GET ROUTE
+// router.get('/blogPosts/new', (req, res) => {
+//     res.render('newPost.ejs')
+// })
+
+// // DELETE ROUTE
+// router.delete('/blogPosts/:index', (req, res) => {
+//     blogPosts.splice(req.params.index, 1)
+//     res.redirect('/blogPosts')
+// }) // models
+
+// // POST ROUTE
+// router.post("/blogPosts/", (req, res) => {
+//     req.body.readyToEat = req.body.readyToEat === 'on' ? true : false;
+//     blogPosts.push(req.body);
+//     res.render('index.ejs', { blogPosts });
+// });
+
+// // SHOW ROUTE
+// router.get('/blogPosts/:index', (req, res) => {
+//     console.log(req.params.index)
+//     const blogPost = blogPosts [req.params.index]
+//     res.render('show.ejs', {blogPost})
+// })
+
+// module.exports = router 
+

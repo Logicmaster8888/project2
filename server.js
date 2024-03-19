@@ -8,8 +8,9 @@ const app = express(); // Express APP Good to Go!
 
 // SERVER ROUTES
 app.use('/', require('./routes/blogRoutes'));
+const blogPost = require('./models/blogPosts');
 
-const db = require('./models') // Fruits
+// const db = require('./models') // Fruits
 
 // Set port
 const PORT = process.env.PORT || 9000; // PORT defined as 9000; Fruits 
@@ -97,15 +98,6 @@ app.use(methodOverride('_method')); // Method override // Fruits
 // app.use(loginController);
 // app.use(homeController);
 
-// app.get("/api/blogs", (req, res) => {
-//     res.json({message: "Get all blogs"});
-// });
-
-// app.get("/api/blogs", (req, res) => {
-//     res.status(200).json({message: "Get all blogs"});
-// });
-
-// app.use("/api/blogs", require("./routes/blogRoutes"));
 
 const blogRouter = require('./routes/blogRoutes');
 app.use('/blogRoutes', blogRouter);
