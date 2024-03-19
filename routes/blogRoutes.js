@@ -16,10 +16,16 @@ const router = express.Router();
 // //     res.status(200).json({ Message: "Can I send code through here?"});
 // // });
 
+// / ROUTE WORKS! 
+router.get('/', (req, res) => {
+    res.send('Hello World')
+})
+
 // HOME ROUTE // Front Facing Screen
-router.get('', (req, res) => { // changed for app to Router
-    res.render("index");
-}); // Change from Sender to Render for specific page// Use res.render('index'); to render index.ejs page
+// router.get('/', (req, res) => { 
+//     // changed for app to Router
+//     res.render("index");
+// }); // Change from Sender to Render for specific page// Use res.render('index'); to render index.ejs page
 
 // BLOG POST
 router.get('/blogPost', (req, res) => { // changed for app to Router

@@ -107,6 +107,8 @@ app.use(methodOverride('_method')); // Method override // Fruits
 
 // app.use("/api/blogs", require("./routes/blogRoutes"));
 
+const blogRouter = require('./routes/blogRoutes');
+app.use('/blogRoutes', blogRouter);
 
 // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {

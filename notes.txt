@@ -264,3 +264,12 @@ Have it with the database
 
 And that is what I need to build and then carry on that way.
 
+
+Learn about the blog Website all nigt
+
+Get it for 2 hours
+and apply it through then put Auth and login.
+
+But have it so that it's not connected. But can be later.
+
+Option
