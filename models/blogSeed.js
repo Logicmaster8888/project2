@@ -1,4 +1,4 @@
-const blogs = [
+const blogsData = [
     {
       title: 'The Benefits of Regular Exercise',
       content: 'Regular exercise has numerous benefits for both physical and mental health. It helps improve cardiovascular health, strengthen muscles, and boost mood. Incorporating exercise into your daily routine can lead to a healthier and happier life.',
@@ -31,7 +31,7 @@ const blogs = [
     },
   ];
 
-  module.exports = blogs;
+  module.exports = blogsData;
 
   // CITATION 
 /***************************************************************************************

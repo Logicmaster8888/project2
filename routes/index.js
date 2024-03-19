@@ -1,28 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// const blogPosts = require('../models/blogPosts')
-// const blogRoutes = require('./blogRoutes');
-// const userRoutes = require('./userRoutes');
-// Add other router imports as needed
-
-// router.use('/blog', blogRoutes);
-// router.use('/user', userRoutes);
-
-
-// router.get('/', (req, res)=> {
-//     res.render('blogPost')
-// }) f
-
-// CREATING ROUTE
-// router.post('/', (req, res) => {
-
-// })
-// // HOME ROUTE // Front Facing Screen
-
-// }); // Change from Sender to Render for specific page// Use res.render('index'); to render index.ejs page
-
-
 
 
 // BLOG POST // SEE ALL
@@ -66,7 +44,6 @@ router.get('blog/login', (req, res) => { // changed for app to Router
 });
 
 
-// Add other routers as needed
 
 module.exports = router;
 

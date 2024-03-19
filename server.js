@@ -9,8 +9,8 @@ const mongoose = require('mongoose');
 
 
 // SERVER ROUTES
-// app.use('/', require('./routes/blogRoutes'));
-// const blogPost = require('./models/blogPosts');
+app.use('/', require('./routes/blogRoutes'));
+const blogPost = require('./models/blogPosts');
 // const blogRoutes = require('./routers/blogRoutes');
 
 // Set port

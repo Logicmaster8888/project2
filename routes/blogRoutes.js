@@ -7,9 +7,9 @@ const router = express.Router();
 // });
 // router.param('index', blog.checkIfValidParam);
 
-// router.get('/', (req, res) =>{
-//     res.render('index');
-// })
+router.get('/', (req, res) =>{
+    res.render('index');
+})
 
 router.get('/newBlog', (req, res) =>{
     res.render('newBlog');
@@ -30,20 +30,19 @@ router.get('/editBlogs', (req, res) =>{
 // router.get('/allBlogs', (req, res) =>{
 //     res.render('allBlogs');
 // })
-
-router.get('/blogPost', (req, res) =>{
-        res.render('/blogPost');
-    })
-    
+ 
+router.get('/blogs', (req, res) => {
+        res.render('blogs', { blogs: blogs });
+    });
 
 router.get('/login', (req, res) =>{
     res.render('login');
 })
 
 // SHOW PAGE
-// router.get('/404', (req, res) =>{
-//     res.render('404');
-// })
+router.get('/404', (req, res) =>{
+    res.render('404');
+})
 
 const {
 getAllBlogs,

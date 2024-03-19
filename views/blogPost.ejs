@@ -10,20 +10,17 @@
     <h1>Home</h1>  
 </head>
 <body>
-    <!-- Status Form -->
     <form action="/updateStatus" method="POST">
         <%- include('./partials/status.ejs')%>
         <button type="submit">Update Status</button>
     </form>
 
-    <!-- Profile Form -->
     <form action="/editProfile/updateProfile" method="POST">
         <%- include('./partials/profilePhoto.ejs')%>
         <%- include('./partials/profileInputs.ejs')%>
         <button type="submit">Update Profile</button>
     </form>
 
-    <!-- Blog Post Form -->
     <form action="/blogPost/" method="POST">
         <%- include('./partials/blogInputs.ejs')%>
         <button type="submit">Submit Blog Post</button>

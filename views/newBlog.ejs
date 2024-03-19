@@ -10,13 +10,11 @@
     <h1>Create New Post</h1>
 </head>
 <body>
-    <!-- Status Form -->
     <form action="/updateStatus" method="POST">
         <%- include('./partials/status.ejs')%>
         <button type="submit">Update Status</button>
     </form>
 
-    <!-- Blog Post Form -->
     <form action="/blogPost/" method="POST">
         <%- include('./partials/blogInputs.ejs')%>
         <button type="submit">Submit Blog Post</button>
