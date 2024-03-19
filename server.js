@@ -1,11 +1,10 @@
 // Import required modules
 const dotenv = require("dotenv").config(); // 
+const path = require('path');
 const express = require('express');
 const app = express(); // Express APP Good to Go!
 
-// VIEWS ENGINE
-app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, 'views'));
+
 
 // SERVER ROUTES
 app.use('/', require('./routes/blogRoutes'));
@@ -48,6 +47,22 @@ const morgan = require('morgan');
 // // Event listener for DB connection success
 // db.once('open', () => console.log('Connected to the local database!'));
 // //--------------------------------------------------------------------------------------
+//  Configure the app to refresh the browser when nodemon restarts
+// -----------------
+
+// const liveReloadServer = livereload.createServer();
+// liveReloadServer.server.once("connection", () => {
+//     //wait for nodemon to fully restart before refreshing the page
+//     setTimeout(() => {
+//         liveReloadServer.refresh("/");
+//         }, 100);
+// });
+// //  Configure the app (app.set)
+// --------------------------------------------------------------------------
+// VIEWS ENGINE
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 
 // app.use(session({
 //     secret: 'my secret key',
@@ -90,15 +105,13 @@ app.use(methodOverride('_method')); // Method override
 
 // app.use("/api/blogs", require("./routes/blogRoutes"));
 
+
+// The "catch-all" route: Runs for any other URL that doesn't match the above routes
+app.get('*', function (req, res) {
+    res.render('404')
+});
+
 // Start the server
 app.listen(PORT, () => { // callback V
     console.log("Social Media Sync IN SYNC!", PORT); // CALL BACK Console.log
 });
-
-
-// Citation
-// Pokemon 
-
-// Fruits App
-
-// Citation Adding as we go and build out the application
