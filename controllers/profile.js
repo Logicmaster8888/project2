@@ -1,36 +1,59 @@
+const express = require('express');
+const router = express.Router();
+// const Profile = require('../models/profile');
 
-// // const express = require('express')
-// // const router = express.Router();
-
-// // const fruits = require('../models/fruits')
-// // const blogPosts = require('../models/blogPosts')
-// // const profiles = require('../models/profile')
-
-app.post('/editProfile/updateStatus', (req, res) => {
-    const { status } = req.body;
+router.post('/updateStatus', async (req, res) => {
+    const { userId, status } = req.body;
   
-    // Logic to update status in the database
+    try {
+      // Find the user document in the database by userId
+      let user = await User.findById(userId);
+  
+      // Update the status field
+      user.status = status;
+  
+      // Save the updated user document
+      user = await user.save();
+  
+      res.status(200).json({ message: 'Status updated successfully', user });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server Error' });
+    }
   });
-
-  app.post('/editProfile/updateAccountInfo', (req, res) => {
-    const { Name, Location, lastUpdate } = req.body;
   
-    // Update account information in the database based on the received data
+  router.post('/updateUserInfo', async (req, res) => {
+    const { userId, name, location, lastUpdate } = req.body;
+  
+    try {
+      // Find the user document in the database by userId
+      let user = await User.findById(userId);
+  
+      // Update the user information fields
+      user.name = name;
+      user.location = location;
+      user.lastUpdate = lastUpdate;
+  
+      // Save the updated user document
+      user = await user.save();
+  
+      res.status(200).json({ message: 'User information updated successfully', user });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server Error' });
+    }
   });
 
   router.post('/updateBasicInfo', async (req, res) => {
     const { userId, gender, birthday, hometown } = req.body;
   
     try {
-      // Find the user document in the database by userId
       let user = await User.findById(userId);
   
-      // Update the basic information fields
       user.gender = gender;
       user.birthday = birthday;
       user.hometown = hometown;
   
-      // Save the updated user document
       user = await user.save();
   
       res.status(200).json({ message: 'Basic information updated successfully', user });
@@ -41,22 +64,18 @@ app.post('/editProfile/updateStatus', (req, res) => {
   });
     
   
-    // Update account information in the database based on the received data
 
 
     router.post('/updateBasicInfo', async (req, res) => {
         const { userId, accountName, location, lastUpdate } = req.body;
       
         try {
-          // Find the user document in the database by userId
           let user = await User.findById(userId);
       
-          // Update the basic information fields
           user.accountName = accountName;
           user.location = location;
           user.lastUpdate = lastUpdate;
       
-          // Save the updated user document
           user = await user.save();
       
           res.status(200).json({ message: 'Basic information updated successfully', user });
@@ -66,23 +85,64 @@ app.post('/editProfile/updateStatus', (req, res) => {
         }
       });
 
-  app.post('/editProfile/updateContactInfo', (req, res) => {
-    const { email, instagram, mobile, address, website } = req.body;
-  
-    // Update account information in the database based on the received data
-  });
+      router.post('/updateBasicInfo', async (req, res) => {
+        const { userId, email, instagram, mobile, address, website } = req.body;
+      
+        try {
+          let user = await User.findById(userId);
+      
+          user.email = email;
+          user.instagram = instagram;
+          user.mobile = mobile;
+          user.address = address;
+          user.website = website;
+      
+          user = await user.save();
+      
+          res.status(200).json({ message: 'Basic information updated successfully', user });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Server Error' });
+        }
+      });
 
-  app.post('/editProfile/updateEducationInfo', (req, res) => {
-    const { college, highschool } = req.body;
-  
-    // Update account information in the database based on the received data
-  });
+      router.post('/updateBasicInfo', async (req, res) => {
+        const { userId, college, highschool } = req.body;
+      
+        try {
+          let user = await User.findById(userId);
+      
+          user.college = college;
+          user.highschool = highschool;
+      
+          user = await user.save();
+      
+          res.status(200).json({ message: 'Basic information updated successfully', user });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Server Error' });
+        }
+      });
 
-  app.post('/editProfile/editBlog', (req, res) => {
-    const { postTitle, postContent, postImage, postDate } = req.body;
-  
-    // Update account information in the database based on the received data
-  });
+      router.post('/updatePost', async (req, res) => {
+        const { postId, postTitle, postContent, postImage, postDate } = req.body;
+      
+        try {
+          let post = await Post.findById(postId);
+      
+          post.postTitle = postTitle;
+          post.postContent = postContent;
+          post.postImage = postImage;
+          post.postDate = postDate;
+      
+          post = await post.save();
+      
+          res.status(200).json({ message: 'Post updated successfully', post });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Server Error' });
+        }
+      });
 // // // PROFILE
 // // router.get('/profile', (req , res) => {
 // //     res.render('profile', { blogPosts });

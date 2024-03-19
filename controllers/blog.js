@@ -1,124 +1,169 @@
-// const allBlogs = require('../models/blogs');
-// const path = require('path');
+// const express = require('express');
+// const router = express.Router();
+// // const Blog = require('../models/blog');
 
-// const getAllBlogs = (req, res) => {
-//     res.render('index', { allBlogs });
-// };
 
-// // renders the new page
-// const newBlogs = (req, res) => {
-//     res.render('newBlogs');
-// };
+// // INDUCES
 
-// app.post('/editBlog', (req, res) => {
-//     const { postTitle, postContent, postImage, postDate } = req.body;
+// // INDEX ROUTE
+// app.get('/', (req, res)  => {
+//     res.render('index', { index: index});
+// });
+// // NEW ROUTE
+// app.get('/allPosts', (req, res) => {
+//     res.render('blogIndex')
+// });
+
+// // SHOW ROUTe
+// // app.get('/blog/:id', (req, res) => {
+// //     const 
+// // })
+
+// // DELETE ROUTE
+
+// // UPDATE ROUTE
+// router.post('/updatePost', async (req, res) => {
+//     const { postId, postTitle, postContent, postImage, postDate } = req.body;
   
-//     // Update account information in the database based on the received data
+//     try {
+//       let post = await Post.findById(postId);
+  
+//       post.postTitle = postTitle;
+//       post.postContent = postContent;
+//       post.postImage = postImage;
+//       post.postDate = postDate;
+  
+//       post = await post.save();
+  
+//       res.status(200).json({ message: 'Post updated successfully', post });
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).json({ message: 'Server Error' });
+//     }
 //   });
 
-// // DELETE BLOG
-// const deleteBlog = (req, res) => {
-//     const blogIndex = allBlogs.findIndex {
-//         blog => req.params.index === blog.id
-//     );
-//     allBlogs.splice(blogIndex, 1);
-//     allBlogs.sort((a, b) => parseInt(a.id) - parseInt(b.id));
-//     res.redirect('/allBlogs');
-// };
+// // CREATE ROUTE 
+
+// // SET ROUTE
+
+// // E ROUTE
 
 
+// // const getAllBlogs = (req, res) => {
+// //     res.render('index', { allBlogs });
+// // };
+
+// // // renders the new page
+// // const newBlogs = (req, res) => {
+// //     res.render('newBlogs');
+// // };
+
+// // app.post('/editBlog', (req, res) => {
+// //     const { postTitle, postContent, postImage, postDate } = req.body;
+  
+// //     // Update account information in the database based on the received data
+// //   });
+
+// // // DELETE BLOG
+// // const deleteBlog = (req, res) => {
+// //     const blogIndex = allBlogs.findIndex {
+// //         blog => req.params.index === blog.id
+// //     );
+// //     allBlogs.splice(blogIndex, 1);
+// //     allBlogs.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+// //     res.redirect('/allBlogs');
+// // };
+
+// // CREATES BLOG
+
+// // MAPS THE FORM DATA INTO STRUCTURE OF THE MODEL
+
+// // RENDERS EDIT OF THE BLOG
 
 
-// CREATES BLOG
+// // SHOWS ALL DETAILS OF THE BLOG
 
-// MAPS THE FORM DATA INTO STRUCTURE OF THE MODEL
+// // CHECKS PARAMETER IS VALID 
 
-// RENDERS EDIT OF THE BLOG
+// // module.exports = {
+// //     getAllBlogs,
+// //     newBlog,
+// //     deleteBlog,
+// //     updateBlog,
+// //     createBlog,
+// //     editBlog,
+// //     showBlog,
+// //     checkIfValidParam,
+// // };
 
+// // const Blog = require('../models/blogPosts');
 
-// SHOWS ALL DETAILS OF THE BLOG
+// // module.exports = {
+// //   // CREATE a new blog post
+// //   async createBlog(req, res) {
+// //     const { title, content, author, date } = req.body;
+// //     const newBlog = new Blog({ title, content, author, date });
 
-// CHECKS PARAMETER IS VALID 
+// //     try {
+// //       const savedBlog = await newBlog.save();
+// //       res.status(201).json(savedBlog);
+// //     } catch (error) {
+// //       res.status(400).json({ message: error.message });
+// //     }
+// //   },
 
-// module.exports = {
-//     getAllBlogs,
-//     newBlog,
-//     deleteBlog,
-//     updateBlog,
-//     createBlog,
-//     editBlog,
-//     showBlog,
-//     checkIfValidParam,
-// };
+// //   // READ all blog posts
+// //   async getAllBlogs(req, res) {
+// //     try {
+// //       const blogs = await Blog.find();
+// //       res.json(blogs);
+// //     } catch (error) {
+// //       res.status(500).json({ message: error.message });
+// //     }
+// //   },
 
-// const Blog = require('../models/blogPosts');
+// //   // READ a single blog post by ID
+// //   async getBlogById(req, res) {
+// //     const { id } = req.params;
 
-// module.exports = {
-//   // CREATE a new blog post
-//   async createBlog(req, res) {
-//     const { title, content, author, date } = req.body;
-//     const newBlog = new Blog({ title, content, author, date });
+// //     try {
+// //       const blog = await Blog.findById(id);
+// //       if (!blog) {
+// //         return res.status(404).json({ message: 'Blog not found' });
+// //       }
+// //       res.json(blog);
+// //     } catch (error) {
+// //       res.status(500).json({ message: error.message });
+// //     }
+// //   },
 
-//     try {
-//       const savedBlog = await newBlog.save();
-//       res.status(201).json(savedBlog);
-//     } catch (error) {
-//       res.status(400).json({ message: error.message });
-//     }
-//   },
+// //   // UPDATE a blog post by ID
+// //   async updateBlog(req, res) {
+// //     const { id } = req.params;
 
-//   // READ all blog posts
-//   async getAllBlogs(req, res) {
-//     try {
-//       const blogs = await Blog.find();
-//       res.json(blogs);
-//     } catch (error) {
-//       res.status(500).json({ message: error.message });
-//     }
-//   },
+// //     try {
+// //       const updatedBlog = await Blog.findByIdAndUpdate(id, req.body, { new: true });
+// //       if (!updatedBlog) {
+// //         return res.status(404).json({ message: 'Blog not found' });
+// //       }
+// //       res.json(updatedBlog);
+// //     } catch (error) {
+// //       res.status(500).json({ message: error.message });
+// //     }
+// //   },
 
-//   // READ a single blog post by ID
-//   async getBlogById(req, res) {
-//     const { id } = req.params;
+// //   // DELETE a blog post by ID
+// //   async deleteBlog(req, res) {
+// //     const { id } = req.params;
 
-//     try {
-//       const blog = await Blog.findById(id);
-//       if (!blog) {
-//         return res.status(404).json({ message: 'Blog not found' });
-//       }
-//       res.json(blog);
-//     } catch (error) {
-//       res.status(500).json({ message: error.message });
-//     }
-//   },
-
-//   // UPDATE a blog post by ID
-//   async updateBlog(req, res) {
-//     const { id } = req.params;
-
-//     try {
-//       const updatedBlog = await Blog.findByIdAndUpdate(id, req.body, { new: true });
-//       if (!updatedBlog) {
-//         return res.status(404).json({ message: 'Blog not found' });
-//       }
-//       res.json(updatedBlog);
-//     } catch (error) {
-//       res.status(500).json({ message: error.message });
-//     }
-//   },
-
-//   // DELETE a blog post by ID
-//   async deleteBlog(req, res) {
-//     const { id } = req.params;
-
-//     try {
-//       const deletedBlog = await Blog.findByIdAndDelete(id);
-//       if (!deletedBlog) {
-//         return res.status(404).json({ message: 'Blog not found' });
-//       }
-//       res.json({ message: 'Blog deleted successfully' });
-//     } catch (error) {
-//       res.status(500).json({ message: error.message });
-//     }
-//   },
-// };
+// //     try {
+// //       const deletedBlog = await Blog.findByIdAndDelete(id);
+// //       if (!deletedBlog) {
+// //         return res.status(404).json({ message: 'Blog not found' });
+// //       }
+// //       res.json({ message: 'Blog deleted successfully' });
+// //     } catch (error) {
+// //       res.status(500).json({ message: error.message });
+// //     }
+// //   },
+// // };

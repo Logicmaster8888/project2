@@ -11,8 +11,8 @@ router.get('/', (req, res) =>{
     res.render('index');
 })
 
-router.get('/newPost', (req, res) =>{
-    res.render('newPost');
+router.get('/newBlog', (req, res) =>{
+    res.render('newBlog');
 })
 
 router.get('/editProfile', (req, res) =>{
@@ -23,13 +23,18 @@ router.get('/profile', (req, res) =>{
     res.render('profile');
 })
 
-router.get('/editPosts', (req, res) =>{
-    res.render('editPosts');
+router.get('/editBlogs', (req, res) =>{
+    res.render('editBlogs');
 })
 
+// router.get('/allBlogs', (req, res) =>{
+//     res.render('allBlogs');
+// })
+
 router.get('/blogPost', (req, res) =>{
-    res.render('blogPost');
-})
+        res.render('blogPost');
+    })
+    
 
 router.get('/login', (req, res) =>{
     res.render('login');
