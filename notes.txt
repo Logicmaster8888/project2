@@ -161,3 +161,94 @@ Looking Good. How do I design it?
 
 That's what I want and then I can add the function now! This is definitely so much fun!
 
+Modular Approach this is how we take it and build off of what is available. Adding in the quotation and adding in the details of modular function is what is necessary.
+
+Now this place is a catch all like a SEO or Funnel. This is the perfect Funnel. And now we can just add it in. It is looking like it's coming together for real! All I need is the functionality and the Design and then I am ready!
+
+Change the Color and all is well that ends amazing.
+
+Simple function and then have a place where we see all the Blogs in one place
+
+Home
+INDUCES
+
+/ Index
+/ New
+// Delete
+// Update
+// Create
+// -- Create User?
+// Edit
+// 
+
+
+Profile
+
+INDUCES
+Index
+New
+// Create New User Function
+Delete
+// Delete User
+Update
+// Update User
+Create
+// Create User
+Edit
+Edit User
+Sa
+
+
+It's Simple.
+
+
+
+Edit Profile
+INDUCES
+
+Create
+ready
+Update
+DELETE
+
+
+New Post
+
+Create
+ready
+Update
+DELETE
+
+
+Blog Posts
+Create
+ready
+Update
+DELETE
+
+
+Edit Posts
+Create
+ready
+Update
+DELETE
+
+
+
+Log Out
+
+Make it just Practice and Use POSTMAN. Is all you need!
+
+// FIll In Details - DO a POSTMAN Connection Piece - Extrapulate the data
+
+POST // updateStatus
+
+POST // updateAccountInfo
+
+POST // updateBasicInfo
+
+POST // updateContactInfo
+
+POST // updateEducationInfo
+
+POST // saveBlogPost

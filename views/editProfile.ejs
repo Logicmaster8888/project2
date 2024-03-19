@@ -10,11 +10,20 @@
     <h1>Edit Profile</h1>
 </head>
 <body>
- 
+    <%- include('./partials/profilePhoto.ejs')%>
     <form action="/editProfile/" method="POST">
+        <%- include('./partials/status.ejs')%>
+
+    <%- include('./partials/profileInputs.ejs')%>
+
+
+    </form>
+
+    <form action="/blogPost/" method="POST">
         <%- include('./partials/blogInputs.ejs')%>
-        <%- include('./partials/profilePhoto.ejs')%>
+
     </form>
     <a href="/">Go Back</a>
+   
 </body>
 </html>
