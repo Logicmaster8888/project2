@@ -6,7 +6,7 @@ const express = require('express'); // Fruits
 const app = express(); // Express APP Good to Go!
 // const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const BasicInfo = require('./models/BasicInfo.js');
+const BasicInfo = require('./models/BasicInfo');
 const BlogPost = require('./models/BlogPost');
 const AccountInfo = require('./models/AccountInfo.js')
 const ContactInfo = require('./models/ContactInfo');
@@ -102,6 +102,7 @@ app.set('views', path.join(__dirname, 'views')); // Fruits
 //     res.json(blogs); 
 //   });
  
+//PROFILE POST
 app.post('/api/Profiles', async (req, res) => {
     try {
         const profile = await Profile.create(req.body);
@@ -111,6 +112,8 @@ app.post('/api/Profiles', async (req, res) => {
     }
 });
 
+
+// ACCOUNT POST
   app.post('/api/AccountInfo', async (req, res) => {
     try {
         const accountInfo = await AccountInfo.create(req.body);
@@ -120,6 +123,7 @@ app.post('/api/Profiles', async (req, res) => {
     }
   });
 
+  // CONTACT POST
   app.post('/api/ContactInfo', async (req, res) => {
     try {
         const contactInfo = await ContactInfo.create(req.body);
@@ -129,6 +133,17 @@ app.post('/api/Profiles', async (req, res) => {
     }
   });
 
+  // BASIC POST
+  app.post('/api/BasicInfo', async (req, res) => {
+    try {
+        const BasicInfo = await BasicInfo.create(req.body);
+        res.status(200).json(BasicInfo);
+    } catch(error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// EDUCATION POST
   app.post('/api/EducationInfo', async (req, res) => {
     try {
         const educationInfo = await EducationInfo.create(req.body);
@@ -138,6 +153,7 @@ app.post('/api/Profiles', async (req, res) => {
     }
   });
 
+  // BLOG POST POST
   app.post('/api/BlogPost', async (req, res) => {
     try {
         const blogPost = await BlogPost.create(req.body);
@@ -146,6 +162,8 @@ app.post('/api/Profiles', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
   });
+
+  
 
 // app.use(session({
 //     secret: 'my secret key',
