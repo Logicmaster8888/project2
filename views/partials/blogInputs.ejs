@@ -20,3 +20,27 @@
         <button type="button" class="btn btn-primary" onclick="submitForm()">Save Post</button>
     </form>
 </div>
+
+<script>
+    async function submitForm() {
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+        const author = document.getElementById('author').value;
+        const date = document.getElementById('date').value;
+
+        const response = await fetch('/api/BlogPost', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ title, content, author, date })
+        });
+
+        if (response.ok) {
+            alert('Blog Post Saved Successfully!');
+        } else {
+            const errorMessage = await response.text();
+            alert ('Error: ' + errorMessage);
+                }
+    }
+</script>

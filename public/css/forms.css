@@ -109,6 +109,37 @@ h1 {
     color: white; 
 }
 
+.citations {
+    margin-top: 20px;
+}
+
+.citation {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.citation:hover {
+    background-color: #f0f0f0;
+}
+
+.citation p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.citation a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.citation a:hover {
+    text-decoration: underline;
+}
 /* */
 /* Title: How to Do Advanced Webpage Styling with CSS
 Author: CareerFoundry https://careerfoundry.com/en/tutorials/web-development-for-beginners/how-to-do-advanced-webpage-styling-with-css
