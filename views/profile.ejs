@@ -23,14 +23,14 @@
 
     <h1>Your Account</h1>
 
-    <form action="/editProfile/updateProfile" method="POST">
+    <form action="/save-profile-picture" method="POST">
+        <form action="/save-profile-picture" method="post" enctype="multipart/form-data">
         <%- include('./partials/profilePhoto.ejs')%>
         <%- include('./partials/profileInputs.ejs')%>
-        <button type="submit">Update Profile</button>
+        <input type="file" name="profilePicture">
     </form>
 
-    <form action="/blogPost/" method="POST">
-        <%- include('./partials/blogInputs.ejs')%>
+    <form action="/api/BlogPost" method="POST">
         <button type="submit">Submit Blog Post</button>
     </form>
 

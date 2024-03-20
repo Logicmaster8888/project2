@@ -6,20 +6,37 @@
     <title>Home</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/forms.css">
-    <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
-    <h1>Home</h1>  
 </head>
 <body>
-    <form action="/blogPost/" method="POST">
+    <%- include('./partials/navbar.ejs', { header: 'Your Header Value' }) %>
+    <h1>Home</h1>  
+
+    <!-- Profile Picture Upload Form -->
+    <form action="/save-profile-picture" method="post" enctype="multipart/form-data">
+        <!-- Include profile photo and inputs -->
         <%- include('./partials/profilePhoto.ejs')%>
-        <%- include('./partials/status.ejs')%>
         <%- include('./partials/profileInputs.ejs')%>
+        
+        <!-- File input for profile picture -->
+        <input type="file" name="profilePicture">
+        
+    </form>
+
+    <!-- Status form -->
+    <%- include('./partials/status.ejs')%>
+
+    <!-- Blog Post Form -->
+    <form action="/blogPost/" method="POST">
+        <!-- Include blog inputs -->
         <%- include('./partials/blogInputs.ejs')%>
         <button type="submit">Submit Blog Post</button>
     </form>
+
+    <!-- Go back link -->
     <a href="/">Go Back</a>
 </body>
 </html>
+
 <!-- 
 --------------------------------------------------------------
 // Title: Express Tutorial - EJS Layouts and Partials tutorial
