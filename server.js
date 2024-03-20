@@ -6,11 +6,23 @@ const express = require('express'); // Fruits
 const app = express(); // Express APP Good to Go!
 // const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const BasicInfo = require('./models/BasicInfo.js');
+const BlogPost = require('./models/BlogPost');
+const AccountInfo = require('./models/AccountInfo.js')
+const ContactInfo = require('./models/ContactInfo');
+const EducationInfo = require('./models/EducationInfo');
 
+// const bodyParser = require('body-parser');
+// const {
+//     AccountInfo,
+//     BasicInfo,
+//     ContactInfo,
+//     EducationInfo,
+//     BlogPost
+//  } = require('./models');
 
 // SERVER ROUTES
 app.use('/', require('./routes/blogRoutes'));
-const blogPost = require('./models/blogPosts');
 // const blogRoutes = require('./routers/blogRoutes');
 
 // Set port
@@ -18,6 +30,8 @@ const PORT = process.env.PORT || 9000; // PORT defined as 9000; Fruits
 const methodOverride = require('method-override'); // Fruits
 const morgan = require('morgan'); // Fruits
 const session = require('express-session');
+app.use(express.json());
+// app.use(bodyParser.json());
 
 // const db = require('./models');
 // --------------------------------------------------------------
@@ -35,26 +49,38 @@ const session = require('express-session');
 
 // -------------------------------------------------------------
 // Import models // GOOD 
-const Blog = require('./models/blogPosts');
+// const Blog = require('./models/blogPosts');
 const index = require('./models/index');
 const login = require('./models/login');
 const profile = require('./models/profile');
 const user = require('./models/user');
+const { TopologyDescription } = require("mongodb");
 // const mongoose = require('mongoose'); // DATABASE TO MONGODB CONNECTION 
 // Initialize Express app
 
 // // ---------------------------------------------------------------------------------------
 // CONNECT to MONGODB using the DB_URL
-mongoose.connect('mongodb+srv://logicmaster8888:7CzpIKnuduOn7lnH@cluster0.mohcynn.mongodb.net/Node_crud', {});// Assign the DB_URL
-const DB_URL = process.env.DB_URL;
- // keeps my URL Hidden 
+// mongoose.connect('mongodb+srv://logicmast.mohcynn.mongodb.net/Node_crud', {});// Assign the DB_URL
+// const DB_URL = process.env.DB_URL;
+//  // keeps my URL Hidden er8888:7CzpIKnuduOn7lnH@cluster0
 
-// Get the default connection
-const db = mongoose.connection;
-// Event listener for DB connection error
-db.on('error', (error) => console.error('Error connecting to MongoDB:', error));
-// Event listener for DB connection success
-db.once('open', () => console.log('Connected to the local database!'));
+// // Get the default connection
+// const db = mongoose.connection;
+// // Event listener for DB connection error
+// db.on('error', (error) => console.error('Error connecting to MongoDB:', error));
+// // Event listener for DB connection success
+// db.once('open', () => console.log('Connected to the local database!'));
+
+
+mongoose.connect('mongodb+srv://logicmaster8888:7CzpIKnuduOn7lnH@cluster0.mohcynn.mongodb.net/Node_crud?2retryWrites=true%w=majority')
+.then(() => {
+    console.log("Connected to database");
+})
+.catch((err) => {
+    console.log("Connection failed!, err");
+});
+
+
 // //--------------------------------------------------------------------------------------
 //  Configure the app to refresh the browser when nodemon restarts
 // -----------------
@@ -71,12 +97,55 @@ db.once('open', () => console.log('Connected to the local database!'));
 // VIEWS ENGINE
 app.set('view engine', 'ejs'); // Fruits
 app.set('views', path.join(__dirname, 'views')); // Fruits
-// app.use(bodyParser.json()); // Fruits
 
-app.get('/blogs', (req, res) => {
-    res.json(blogs); 
-  });
+// app.get('/blogs', (req, res) => {
+//     res.json(blogs); 
+//   });
  
+app.post('/api/Profiles', async (req, res) => {
+    try {
+        const profile = await Profile.create(req.body);
+        res.status(200).json(profile);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+  app.post('/api/AccountInfo', async (req, res) => {
+    try {
+        const accountInfo = await AccountInfo.create(req.body);
+        res.status(200).json(accountInfo);
+    }catch (error) {
+        res.status(500).json({ message: error.message});
+    }
+  });
+
+  app.post('/api/ContactInfo', async (req, res) => {
+    try {
+        const contactInfo = await ContactInfo.create(req.body);
+        res.status(200).json(contactInfo);
+    } catch(error) {
+        res.status(500).json({ message: error.message });
+    }
+  });
+
+  app.post('/api/EducationInfo', async (req, res) => {
+    try {
+        const educationInfo = await EducationInfo.create(req.body);
+        res.status(200).json(educationInfo);
+    } catch (error) {
+        res.status(500).json({ message: error.message});
+    }
+  });
+
+  app.post('/api/BlogPost', async (req, res) => {
+    try {
+        const blogPost = await BlogPost.create(req.body);
+        res.status(200).json(blogPost);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+  });
 
 // app.use(session({
 //     secret: 'my secret key',
@@ -131,9 +200,10 @@ app.use(methodOverride('_method')); // Method override // Fruits
 //     res.render('404')
 // }); // Fruits
 
-// app.get('/', (res, req)=> {
-//     res.send(console.log('hello'))
-// })
+app.get('/', (req, res) => {
+    res.send('Hello from Social Sync App'); 
+});
+
 
 // Start the server
 app.listen(PORT, () => { // callback V

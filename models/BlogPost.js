@@ -19,7 +19,8 @@ const blogPostSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('blogPosts', blogPostSchema);
+const BlogPost = mongoose.model('blogPosts', blogPostSchema);
+module.exports = BlogPost;
 
 // // CITATION 
 // /***************************************************************************************

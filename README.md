@@ -103,6 +103,7 @@ Accomplishments:
 -Building out the codification from memory and muscle memory more than anything else.
 
 
+Developing Social Sync defintiely was a great learning experience. 
 -Suggestions for Further Improvement:
 
 Error Handling: Enhance error handling mechanisms to gracefully manage errors and provide informative responses to users.
