@@ -5,14 +5,26 @@ const path = require('path'); // Fruits
 const express = require('express'); // Fruits
 const app = express(); // Express APP Good to Go!
 // const bodyParser = require('body-parser');
+
+const multer = require('multer');
+
+
+
+// Models
+// -------------------------------------------------------------------------------
 const mongoose = require('mongoose');
 const BasicInfo = require('./models/BasicInfo');
 const BlogPost = require('./models/BlogPost');
 const AccountInfo = require('./models/AccountInfo.js')
 const ContactInfo = require('./models/ContactInfo');
 const EducationInfo = require('./models/EducationInfo');
+const Status = require('./models/Status');
+const PInfo = require('./models/PInfo.js');
 
-// const bodyParser = require('body-parser');
+
+
+
+const bodyParser = require('body-parser');
 // const {
 //     AccountInfo,
 //     BasicInfo,
@@ -47,12 +59,59 @@ app.use(express.json());
 // app.use('/sessions', sessionsController'); 
 // Handles login and logout
 
+const storage = multer.diskStorage ({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/')
+        },
+        filename: function (req, file, cb) {
+            cb(null, file.originalname)
+        }
+})
+
+const upload = multer({ storage: storage });
+
+app.post('/api/BlogPost', upload.single('postImage'), async (req, res) => {
+    try {
+        const newPost = await BlogPost.create({
+            postTitle: req.body.postTitle,
+            postContent: req.body.postContent,
+            postImage: req.file ? req.file.path : '',
+            postDate: req.body.postDate 
+        });
+        res.status(201).json(newPost);
+    } catch(error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// BLOG POST POST FORM SUBMISSION
+// // ---------------------------------------------------------------------------------------
+app.post('/save-post', (req, res) => {
+    const { title, content, author, date } = req.body;
+
+    const newPost = new BlogPost({
+        title,
+        content,
+        author,
+        date: new Date(date) // Assuming date is in ISO format
+    });
+
+    newPost.save()
+        .then(() => {
+            res.status(200).json({ message: 'Post saved successfully' });
+        })
+        .catch(err => {
+            res.status(500).json({ error: err.message });
+        });
+});
+
+
 // -------------------------------------------------------------
 // Import models // GOOD 
 // const Blog = require('./models/blogPosts');
 const index = require('./models/index');
 const login = require('./models/login');
-const profile = require('./models/profile');
+const profile = require('./models/PInfo.js');
 const user = require('./models/user');
 const { TopologyDescription } = require("mongodb");
 // const mongoose = require('mongoose'); // DATABASE TO MONGODB CONNECTION 
@@ -72,6 +131,8 @@ const { TopologyDescription } = require("mongodb");
 // db.once('open', () => console.log('Connected to the local database!'));
 
 
+// MONGOOSE CONNETION 
+// // ---------------------------------------------------------------------------------------
 mongoose.connect('mongodb+srv://logicmaster8888:7CzpIKnuduOn7lnH@cluster0.mohcynn.mongodb.net/Node_crud?2retryWrites=true%w=majority')
 .then(() => {
     console.log("Connected to database");
@@ -154,16 +215,44 @@ app.post('/api/Profiles', async (req, res) => {
   });
 
   // BLOG POST POST
-  app.post('/api/BlogPost', async (req, res) => {
+//   app.post('/api/BlogPost', async (req, res) => {
+//     try {
+//         const blogPost = await BlogPost.create(req.body);
+//         res.status(200).json(blogPost);
+//     } catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+//   });
+app.post('/api/BlogPost', async (req, res) => {
     try {
-        const blogPost = await BlogPost.create(req.body);
-        res.status(200).json(blogPost);
+        const { title, content, author, date } = req.body;
+        const newBlogPost = new BlogPost({ title, content, author, date });
+        const savedBlogPost = await newBlogPost.save();
+        res.status(201).json(savedBlogPost);
+    } catch (error) {
+    res.status(500).json({ message: error.message });
+    }
+});
+
+
+// STATUS POST
+  app.post('/api/Status', async (req, res) => {
+    try {
+        const status = await Status.create(req.body);
+        res.status(200).json(status);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-  });
+});
 
-  
+app.post('/api/PInfo', async (req, res) => {
+    try {
+        const PInfo = await PInfo.create(req.body);
+        res.status(200).json(PInfo);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
 
 // app.use(session({
 //     secret: 'my secret key',

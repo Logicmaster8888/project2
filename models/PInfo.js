@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const profileSchema = new mongoose.Schema({
+const profileInfoSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -12,5 +12,5 @@ const profileSchema = new mongoose.Schema({
     }
 });
 
-const Profile = mongoose.model('Profile', profileSchema); // Fixed the syntax here
-module.exports = Profile;
+const ProfileInfo = mongoose.model('ProfileInfo', profileInfoSchema); 
+module.exports = ProfileInfo;
